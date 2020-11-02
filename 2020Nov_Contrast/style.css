@@ -1,0 +1,250 @@
+.sheep-container {
+  border: 1px solid black;
+  width: 250px;
+  height: 250px;
+  position: relative;
+  margin: 1em;
+  transform: scale(-1, 1);
+}
+
+.sheep-body {
+  position: absolute;
+  width: 70%;
+  height: 55%;
+  background: white;
+  border-radius: 100% / 100%;
+  border: none;
+  transform: rotate(10deg);
+  top: 30%;
+  left: 10%;
+  z-index: 1;
+}
+
+.sheep-legs {
+  position: absolute;
+  width: 3%;
+  height: 30%;
+  background: white;
+  border-radius: 84% 16% 64% 36% / 85% 7% 93% 15%;
+  border: 3px solid black;
+  z-index: -14;
+}
+
+.sheep-legs-front {
+  transform: rotate(10deg);
+  top: 68%;
+  left: 25%;
+}
+
+.sheep-legs-front:before {
+  content: "";
+  position: absolute;
+  width: 70%;
+  height: 60%;
+  background: white;
+  border-radius: 84% 16% 64% 36% / 85% 7% 93% 15%;
+  border: 3px solid black;
+  transform: rotate(-10deg);
+  top: 32%;
+  left: 123%;
+  z-index: -14;
+}
+
+.sheep-legs-back {
+  transform: rotate(-15deg);
+  top: 68%;
+  left: 60%;
+}
+
+
+.sheep-legs-back:before {
+    content: "";
+    position: absolute;
+    width: 70%;
+    height: 60%;
+    background: white;
+    border-radius: 84% 16% 64% 36% / 85% 7% 93% 15%;
+    border: 3px solid black;
+    transform: rotate(-10deg);
+    top: 41%;
+    left: 116%;
+    z-index: -14;
+  }
+
+.sheep-head {
+  position: absolute;
+  width: 45%;
+  height: 80%;
+  top: -10%;
+  left: -5%;
+  border-radius: 46% 47% 48% 50% / 28% 30% 68% 70%;
+  background: rgb(255, 255, 255);
+  border: 3px solid black;
+  transform: rotate(170deg);
+}
+
+.sheep-mount-hor {
+  position: absolute;
+  width: 35px;
+  height: 23px;
+  top: 15%;
+  left: 25%;
+  border: solid 3px #000;
+  border-color: transparent transparent #000 transparent;
+  border-radius: 0 0 70px 80%/34px;
+  transform: rotate(194deg);
+}
+
+.sheep-mount-hor::after {
+  content: "";
+  position: absolute;
+  width: 21px;
+  height: 17px;
+  top: 104%;
+  left: 37%;
+  border: solid 3px #000;
+  border-color: transparent transparent #000 transparent;
+  border-radius: 0 0 70px 80%/34px;
+  transform: rotate(94deg);
+}
+
+.sheep-ear-left {
+  position: absolute;
+  width: 40%;
+  height: 50%;
+  top: 18%;
+  left: 96%;
+  transform: rotate(18deg);
+  border-radius: 84% 16% 64% 36% / 85% 11% 89% 15%;
+  border: 3px solid black;
+  background: rgb(255, 255, 255);
+}
+
+.sheep-ear-right {
+  position: absolute;
+  width: 40%;
+  height: 50%;
+  top: 20%;
+  left: -42%;
+  transform: rotate(-49deg);
+  border-radius: 84% 16% 64% 36% / 85% 11% 89% 15%;
+  border: 3px solid black;
+  background: rgb(255, 255, 255);
+}
+
+.sheep-eye-left {
+  position: absolute;
+  width: 50%;
+  height: 30%;
+  top: 56%;
+  left: 55%;
+  transform: rotate(5deg);
+  border-radius: 55% / 55%;
+  border: 3px solid black;
+  background: rgb(255, 255, 255);
+}
+
+.sheep-eye-left::after {
+  content: "";
+  position: absolute;
+  width: 25%;
+  height: 30%;
+  top: 16%;
+  left: 10%;
+  transform: rotate(5deg);
+  border-radius: 55% / 55%;
+  border: 3px solid black;
+  background: rgb(0, 0, 0);
+}
+
+.sheep-eye-right {
+  position: absolute;
+  width: 61%;
+  height: 40%;
+  top: 52%;
+  left: -11%;
+  transform: rotate(5deg);
+  border-radius: 55% / 55%;
+  border: 3px solid black;
+  background: rgb(255, 255, 255);
+}
+
+.sheep-eye-right::after {
+  content: "";
+  position: absolute;
+  width: 16%;
+  height: 18%;
+  top: 26%;
+  left: 67%;
+  transform: rotate(5deg);
+  border-radius: 55% / 55%;
+  border: 3px solid black;
+  background: rgb(0, 0, 0);
+}
+
+.sheep-wool {
+  position: absolute;
+  width: 14%;
+  height: 13%;
+  background: rgb(255, 255, 255);
+  border: 3px solid black;
+  border-radius: 50%;
+  z-index: -10;
+}
+
+.sheep-wool-1 {
+  top: 36%;
+  left: 6%;
+}
+.sheep-wool-2 {
+  top: 29%;
+  left: 17%;
+}
+.sheep-wool-3 {
+  top: 25%;
+  left: 29%;
+}
+.sheep-wool-4 {
+  top: 25%;
+  left: 43%;
+}
+.sheep-wool-5 {
+  top: 30%;
+  left: 56%;
+}
+.sheep-wool-6 {
+  top: 39%;
+  left: 65%;
+}
+.sheep-wool-7 {
+  top: 49%;
+  left: 71%;
+}
+.sheep-wool-8 {
+  top: 62%;
+  left: 70%;
+}
+.sheep-wool-9 {
+  top: 72%;
+  left: 61%;
+}
+.sheep-wool-10 {
+  top: 74%;
+  left: 49%;
+}
+.sheep-wool-11 {
+  top: 77%;
+  left: 37%;
+}
+.sheep-wool-12 {
+  top: 77%;
+  left: 23%;
+}
+.sheep-wool-13 {
+  top: 68%;
+  left: 12%;
+}
+.sheep-wool-14 {
+  top: 56%;
+  left: 6%;
+}
