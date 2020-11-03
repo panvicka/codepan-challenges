@@ -1,18 +1,28 @@
-window.addEventListener("load", generate);
 
 const div = document.querySelector(".wrapper");
 
-const sheeeeps = [
-  ["white", 1, "left", 50, 60],
-  ["black", 1, "right", 50, 80],
-];
+const generateSheep = (e, color) => {
 
-function generate() {
-  const sheep = new SheepGenerator(...sheeeeps[0]);
-  const sheep2 = new SheepGenerator(...sheeeeps[1]);
+  console.log(e);
+  e.preventDefault();
+  let direction = "right";
+  if (Math.round(Math.random())) {
+    direction = "left";
+  }
+    
+  let scaleMultiplicator = Math.random()*1.4;
+  if (scaleMultiplicator < 0.4) {
+    scaleMultiplicator +=  Math.random();
+  }
+  const sheep = new SheepGenerator(color, scaleMultiplicator, direction, e.clientX, e.clientY);
   sheep.draw(div);
-  sheep2.draw(div);
+
 }
+
+
+div.addEventListener("click", (e) => generateSheep(e, "white"));
+div.addEventListener("contextmenu", (e) => generateSheep(e, "black"));
+
 
 class SheepGenerator {
   constructor(color, scale, lookingDirection, x, y) {
@@ -34,27 +44,36 @@ class SheepGenerator {
   }
 
   draw(container) {
+    console.log( container.clientHeight);
+ 
+    if (this.y-250/1.3 > container.clientHeight) {
+    return ;
+    } 
+  
+
+
     container.innerHTML += `
  
         <div class="sheep-container" 
         style="filter: ${this.invert ? "invert(100%)" : "invert(0%)"}; 
-        transform: ${this.mirror ? "scale(-1,1)" : "scale(1,1)"} 
+        transform: ${this.mirror ? "scale("+-1*this.scale+","+1*this.scale+")" : "scale("+1*this.scale+","+1*this.scale+")"};
+        top: ${this.y-250/2}px;
+        left: ${this.x-250/2}px;
         "> 
 
-        <div class="sheep-wool sheep-wool-1"></div>
-        <div class="sheep-wool sheep-wool-2"></div>
-        <div class="sheep-wool sheep-wool-3"></div>
-        <div class="sheep-wool sheep-wool-4"></div>
-        <div class="sheep-wool sheep-wool-5"></div>
-        <div class="sheep-wool sheep-wool-6"></div>
-        <div class="sheep-wool sheep-wool-7"></div>
-        <div class="sheep-wool sheep-wool-8"></div>
-        <div class="sheep-wool sheep-wool-9"></div>
-        <div class="sheep-wool sheep-wool-10"></div>
-        <div class="sheep-wool sheep-wool-11"></div>
-        <div class="sheep-wool sheep-wool-12"></div>
-        <div class="sheep-wool sheep-wool-13"></div>
-        <div class="sheep-wool sheep-wool-14"></div>
+        ${Array(14)
+          .join(0)
+          .split(0)
+          .map(
+            (item, i) => `
+      <div class="sheep-wool sheep-wool-${i + 1}" ${
+              this.invert ? 'style="border:  none"' : ""
+            }> </div>
+    `
+          )
+          .join("")}
+
+      
         
         <div class="sheep-body" >
 
