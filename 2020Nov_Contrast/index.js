@@ -57,8 +57,8 @@ class SheepGenerator {
         <div class="sheep-container" 
         style="filter: ${this.invert ? "invert(100%)" : "invert(0%)"}; 
         transform: ${this.mirror ? "scale("+-1*this.scale+","+1*this.scale+")" : "scale("+1*this.scale+","+1*this.scale+")"};
-        top: ${this.y-250/2}px;
-        left: ${this.x-250/2}px;
+        top: ${this.y-250/2 + window.scrollY}px;
+        left: ${this.x-250/2 +window.scrollX}px;
         "> 
 
         ${Array(14)
