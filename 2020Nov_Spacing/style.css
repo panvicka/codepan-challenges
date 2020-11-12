@@ -27,7 +27,7 @@ footer p {
   text-align: center;
 }
 
-footer a {
+footer a, i {
   color: rgba(0, 0, 0, 0.623);
 }
 
