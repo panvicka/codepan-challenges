@@ -7,7 +7,7 @@ The repo has some opened issues and features ideas, so feel free to contribute i
 ## 2020 November Challenges - The principles of Design
 
 ### Week 1: Contrast - Generate some sheep for yourself
-- [CodePen demo](https://codepen.io/panvicka/pen/pobqvyL)
+- [CodePen demo](https://codepen.io/panvicka/pen/MWeXVrM)
 - [Project folder](2020Nov_Contrast/README.md)
 
 ### Week 2: Spacing - Clean up and discover (not) hidden joke
