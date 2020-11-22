@@ -14,4 +14,11 @@ The repo has some opened issues and features ideas, so feel free to contribute i
 - [CodePen demo](https://codepen.io/panvicka/pen/pobqvyL)
 - [Project folder](2020Nov_Spacing/README.md)
 
+### Week 3: Repetition - Check out programmer life! 
+- [CodePen demo](https://codepen.io/panvicka/full/eYzwxXK)
+- [Project folder](2020Nov_Repetition/README.md)
 
+
+
+
+ 
