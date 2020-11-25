@@ -1,41 +1,49 @@
 const ROWS = 4;
-const TOTAL = 10;
+ const TILE_WIDTH = 70;
+const TILE_HEIGHT = 90;
 
 const containerDiv = document.querySelector<HTMLElement>(".container");
 const head = document.querySelector<HTMLElement>(".main-head");
 const person = document.querySelector<HTMLElement>(".person");
 
 let draggingMen = false;
+let oneMenDropped = 0;
 
-head.addEventListener("mousedown", () => {
+person.addEventListener("mousedown", () => {
   draggingMen = true;
-  person.setAttribute("draggable", "true");
+  if (oneMenDropped == 0) {
+    containerDiv.classList.remove("no-after");
+  } else {
+    containerDiv.classList.add("no-after");
+  }
+
   console.log("mousedown");
 });
 
 head.addEventListener("mouseup", () => {
   draggingMen = false;
-  person.setAttribute("draggable", "true");
+
   console.log("mousedown");
 });
 
 person.addEventListener("dragend", () => {
   draggingMen = false;
-  person.classList.remove('invisible');
-  person.classList.remove('person-hold')
-
-  person.setAttribute("draggable", "false");
+  person.classList.remove("invisible");
+  person.classList.remove("person-hold");
+  containerDiv.classList.add("no-after");
   console.log("dragend");
+
+  const hoveredButFull = document.querySelector(".hovered-but-full");
+  console.log(hoveredButFull);
+
+  if (hoveredButFull !== null) {
+    hoveredButFull.classList.remove("hovered-but-full");
+  }
 });
 
 person.addEventListener("dragstart", () => {
   person.classList.add("person-hold");
-  setTimeout(() => (person.classList.add('invisible')), 0);
-});
-
-person.addEventListener("dragsend", () => {
-  person.classList.remove("person-hold");
-});
+ });
 
 function dragOver(e) {
   e.preventDefault();
@@ -74,6 +82,7 @@ function dragDrop() {
       const hasDivPerson = this.querySelector(".person");
       if (hasDivPerson === null) {
         addPerson(this);
+        oneMenDropped = 1;
       }
     }
   }
@@ -83,20 +92,35 @@ function addPerson(div: HTMLElement) {
   const newPerson = document.createElement("div");
   newPerson.classList.add("person");
   newPerson.classList.add("person-in-background");
+  newPerson.classList.add("placed");
+
   newPerson.setAttribute("draggable", "false");
   newPerson.innerHTML = `
     <div class="body"> </div>
     <div class="head"> </div>
-    <div class="hand left "> </div>
-    <div class="hand right "> </div>
+    <div class="hand left placed"> </div>
+    <div class="hand right placed "> </div>
     `;
   div.appendChild(newPerson);
 }
 
 window.addEventListener("load", () => generateArray(containerDiv));
+window.addEventListener("resize", () => generateArray(containerDiv));
 
 function generateArray(div: HTMLElement) {
-  for (let i = 0; i <= TOTAL; i++) {
+  div.innerHTML = "";
+  let w = div.clientWidth;
+  let h = window.innerHeight - 190;
+
+  const numberOfTiles = Math.floor(w / TILE_WIDTH);
+  let numberOfRows = Math.floor(h / TILE_HEIGHT);
+  if (numberOfRows < 1) {
+    numberOfRows = 1;
+  }
+  const total = numberOfTiles * numberOfRows;
+  console.log(numberOfTiles, numberOfRows, total);
+
+  for (let i = 0; i < total; i++) {
     const newTile = document.createElement("div");
     newTile.classList.add("tile");
 
