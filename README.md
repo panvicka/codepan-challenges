@@ -18,6 +18,10 @@ The repo has some opened issues and features ideas, so feel free to contribute i
 - [CodePen demo](https://codepen.io/panvicka/full/eYzwxXK)
 - [Project folder](2020Nov_Repetition/README.md)
 
+### Week 4: Unity - Make stick man happy
+- [CodePen demo](https://codepen.io/panvicka/pen/ExgYJmx)
+- [Project folder](2020Nov_Unity/README.md)
+
 
 
 
