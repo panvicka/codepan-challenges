@@ -1,9 +1,146 @@
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans:wght@900&display=swap");
+
+$bck-color: #000000;
+
+$particles: 2000;
+$width: 600;
+$height: 600;
+
+// Create the explosion...
+$box-shadow: ();
+$box-shadow2: ();
+@for $i from 0 through $particles {
+  $box-shadow: $box-shadow,
+    random($width)-$width /
+      2 +
+      px
+      random($height)-$height /
+      1.2 +
+      px
+      hsl(random(360), 100, 50);
+  $box-shadow2: $box-shadow2, 0 0 #fff;
+}
+@mixin keyframes($animationName) {
+  @-webkit-keyframes #{$animationName} {
+    @content;
+  }
+
+  @-moz-keyframes #{$animationName} {
+    @content;
+  }
+
+  @-o-keyframes #{$animationName} {
+    @content;
+  }
+
+  @-ms-keyframes #{$animationName} {
+    @content;
+  }
+
+  @keyframes #{$animationName} {
+    @content;
+  }
+}
+
+@mixin animation($settings) {
+  -moz-animation: $settings;
+  -webkit-animation: $settings;
+  -o-animation: $settings;
+  -ms-animation: $settings;
+  animation: $settings;
+}
+
+@mixin transform($settings) {
+  transform: $settings;
+  -moz-transform: $settings;
+  -webkit-transform: $settings;
+  -o-transform: $settings;
+  -ms-transform: $settings;
+}
+
+@include keyframes(bang) {
+  to {
+    box-shadow: $box-shadow;
+  }
+}
+
+@include keyframes(gravity) {
+  to {
+    @include transform(translateY(200px));
+    opacity: 0;
+  }
+}
+
+span {
+  position: absolute;
+  font-size: 30rem;
+
+ //  mix-blend-mode: multiply;
+ 
+  
+  
+  mix-blend-mode: color-burn;
+ // mix-blend-mode: hard-light;
+  
+
+  transform: translateY(-55%) translateX(-50%);
+  color: rgb(22, 22, 22);
+}
+
 * {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
 html {
-    background-color: indianred; 
+  height: 100%;
+  font-family: "Work Sans", sans-serif;
+}
+
+.container {
+  background-color: $bck-color;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0 auto;
+}
+
+nav {
+  width: 50%;
+  height: 100px;
+}
+
+footer {
+  width: 50%;
+  min-height: 3em;
+}
+
+main {
+  width: 50%;
+  height: 300px;
+  min-height: 20px;
+
+  min-height: 5em;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.animate {
+  transform: translateY(-10%) translateX(-50%);
+  position: absolute;
+  border-radius: 50%;
+  width: 10px;
+  height: 10px;
+  @include animation(
+    (
+      2s bang ease-out infinite backwards,
+      2s gravity ease-in infinite backwards,
+           //5s position linear inf
+    )
+  );
 }
