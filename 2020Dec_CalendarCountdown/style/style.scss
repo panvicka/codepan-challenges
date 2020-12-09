@@ -1,24 +1,21 @@
 @import url("https://fonts.googleapis.com/css2?family=Work+Sans:wght@900&display=swap");
 
-$bck-color: #000000;
+ 
 
-$particles: 2000;
+$bck-color: #000000;
+$particles: 800;
 $width: 600;
 $height: 600;
 
-// Create the explosion...
+// // Create the explosion...
 $box-shadow: ();
-$box-shadow2: ();
+ 
 @for $i from 0 through $particles {
   $box-shadow: $box-shadow,
-    random($width)-$width /
-      2 +
-      px
-      random($height)-$height /
-      1.2 +
-      px
-      hsl(random(360), 100, 50);
-  $box-shadow2: $box-shadow2, 0 0 #fff;
+               random($width)-$width / 2 + px
+               random($height)-$height / 2 + px
+               hsl(random(360), 100, 50);
+ 
 }
 @mixin keyframes($animationName) {
   @-webkit-keyframes #{$animationName} {
@@ -66,24 +63,22 @@ $box-shadow2: ();
 
 @include keyframes(gravity) {
   to {
-    @include transform(translateY(200px));
-    opacity: 0;
+     opacity: 0;
+  }
+}
+
+@include keyframes(appear) {
+  to {
+     opacity: 100%;
   }
 }
 
 span {
   position: absolute;
   font-size: 30rem;
-
- //  mix-blend-mode: multiply;
- 
-  
-  
-  mix-blend-mode: color-burn;
- // mix-blend-mode: hard-light;
-  
-
-  transform: translateY(-55%) translateX(-50%);
+  mix-blend-mode: color-burn; // multiply is also nice
+  z-index: 30;
+  transform: translateY(-49%) translateX(-50%);
   color: rgb(22, 22, 22);
 }
 
@@ -110,7 +105,7 @@ html {
 
 nav {
   width: 50%;
-  height: 100px;
+  height: 50px;
 }
 
 footer {
@@ -131,16 +126,27 @@ main {
 }
 
 .animate {
-  transform: translateY(-10%) translateX(-50%);
+  transform: translateY(-10%) translateX(-80%);
   position: absolute;
   border-radius: 50%;
   width: 10px;
   height: 10px;
   @include animation(
     (
-      2s bang ease-out infinite backwards,
-      2s gravity ease-in infinite backwards,
+      2.1s bang ease-out  backwards,
+      2.1s gravity ease-in-out  backwards,
            //5s position linear inf
     )
   );
+}
+ 
+.restart-text {
+  z-index: 60;
+  color: rgb(85, 78, 78);
+  opacity: 0%;
+  font-size: 3em;
+  mix-blend-mode: normal;
+  animation: appear 2s linear 0.2s;
+  animation-fill-mode: forwards; 
+   cursor: pointer;
 }
