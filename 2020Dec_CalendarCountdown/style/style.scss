@@ -1,7 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Work+Sans:wght@900&display=swap");
 
- 
-
 $bck-color: #000000;
 $particles: 800;
 $width: 600;
@@ -9,13 +7,16 @@ $height: 600;
 
 // // Create the explosion...
 $box-shadow: ();
- 
+
 @for $i from 0 through $particles {
   $box-shadow: $box-shadow,
-               random($width)-$width / 2 + px
-               random($height)-$height / 2 + px
-               hsl(random(360), 100, 50);
- 
+    random($width)-$width /
+      2 +
+      px
+      random($height)-$height /
+      2 +
+      px
+      hsl(random(360), 100, 50);
 }
 @mixin keyframes($animationName) {
   @-webkit-keyframes #{$animationName} {
@@ -63,13 +64,13 @@ $box-shadow: ();
 
 @include keyframes(gravity) {
   to {
-     opacity: 0;
+    opacity: 0;
   }
 }
 
 @include keyframes(appear) {
   to {
-     opacity: 100%;
+    opacity: 100%;
   }
 }
 
@@ -106,6 +107,19 @@ html {
 nav {
   width: 50%;
   height: 50px;
+  margin: 1em auto 1em auto;
+  text-align: center;
+  a,p {    
+    color: rgb(255, 255, 255);
+    opacity: 30%;
+  }
+}
+
+nav:hover {
+  a,p {
+    opacity: 50%;
+ 
+  }
 }
 
 footer {
@@ -133,13 +147,13 @@ main {
   height: 10px;
   @include animation(
     (
-      2.1s bang ease-out  backwards,
-      2.1s gravity ease-in-out  backwards,
-           //5s position linear inf
+      2.1s bang ease-out backwards,
+      2.1s gravity ease-in-out backwards,
+           //5s position linea
     )
   );
 }
- 
+
 .restart-text {
   z-index: 60;
   color: rgb(85, 78, 78);
@@ -147,6 +161,6 @@ main {
   font-size: 3em;
   mix-blend-mode: normal;
   animation: appear 2s linear 0.2s;
-  animation-fill-mode: forwards; 
-   cursor: pointer;
+  animation-fill-mode: forwards;
+  cursor: pointer;
 }
