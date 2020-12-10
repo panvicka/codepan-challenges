@@ -23,6 +23,14 @@ The repo has some opened issues and features ideas, so feel free to contribute i
 - [Project folder](2020Nov_Unity/README.md)
 
 
+## 2020 December Challenges - It's the Holidays!
+
+### Week 1: Calendars and Countdowns - New Years Countdown
+- [CodePen demo](https://codepen.io/panvicka/pen/abmmGJZ)
+- [Project folder](2020Dec_CalendarCountdown/README.md)
+
+
+
 
 
  
