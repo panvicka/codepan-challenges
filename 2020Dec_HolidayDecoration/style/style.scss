@@ -1,0 +1,323 @@
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: floralwhite;
+  font-family: "Ubuntu", sans-serif;
+}
+
+footer {
+  position: fixed;
+  left: 0;
+  bottom: 20px;
+  width: 100%;
+  min-height: 100px;
+  color: black;
+  text-align: center;
+  span {
+    
+    font-weight: bold;
+    font-size: 1.5em;
+  }
+
+  p {
+    margin-top: 1em;
+  }
+
+  a {
+    text-decoration: none;
+    color: grey;
+    transition: 0.5s linear;
+  }
+  a:hover {
+    text-decoration: none;
+    color: rgb(41, 40, 40);
+  }
+}
+
+$orange: rgb(255, 106, 0);
+$red: rgb(255, 34, 0);
+$yellow: rgb(255, 200, 0);
+$blue: rgb(0, 55, 255);
+$candle-yellow-middle: #fecb5c;
+$candle-yellow-light: rgb(255, 239, 171);
+$candle-yellow-dark: rgb(242, 153, 30);
+$candle-red: #ef3e3b;
+
+#candle {
+  width: 180px;
+  margin: 0 auto;
+  padding: 2em;
+}
+
+.candle-shadow {
+  position: relative;
+  z-index: 5;
+  top: -163px;
+  left: 64px;
+  width: 33px;
+  height: 160px;
+  background-color: #f2991e;
+  mix-blend-mode: darken;
+  border-radius: 63px 28px 20px 9px;
+}
+
+.candle-body {
+  z-index: -3;
+  width: 80px;
+  height: 160px;
+  border-top: 15px solid #fecb5c;
+  border-radius: 0px 0px 10px 10px;
+  background-size: auto auto;
+  background-color: #fecb5c;
+  background-image: repeating-linear-gradient(
+    161deg,
+    transparent,
+    transparent 27px,
+    #ff0101 27px,
+    #ff0101 41px
+  );
+  margin: 0 auto;
+  margin-top: 20px;
+
+  &:before {
+    z-index: 2;
+    border-radius: 46% 36% 30% 50%;
+    position: relative;
+    display: block;
+    width: 81px;
+    height: 30px;
+    background-color: #fecb5c;
+    top: -17px;
+    left: 0.9px;
+    -webkit-transform: rotate(160deg);
+    transform: rotate(158deg);
+    content: "";
+  }
+
+  &:after {
+    border-radius: 50%;
+    position: relative;
+    display: block;
+    width: 62px;
+    height: 31px;
+    background-color: $candle-yellow-light;
+    top: -53px;
+    left: -2px;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(22deg);
+    z-index: 0;
+    content: "";
+  }
+}
+
+.candle-fire {
+  padding: 3em;
+  width: 80px;
+}
+
+.fire {
+  position: relative;
+  width: 60px;
+  height: 60px;
+  left: -21px;
+  top: 50px;
+  transform: translateY(-10px);
+  transition: 1s linear;
+
+  .flame {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    opacity: 0.9;
+    width: 100%;
+    height: 100%;
+    border-bottom-right-radius: 70%;
+    border-bottom-left-radius: 70%;
+    border-top-left-radius: 70%;
+    transform: rotate(-45deg) skew(-10deg, -10deg);
+    background-color: $red;
+    background-image: linear-gradient(
+      top right,
+      fade-out($red, 0.1),
+      fade-out($orange, 0.3)
+    );
+    z-index: 1;
+
+    animation-iteration-count: infinite;
+    animation-fill-mode: forwards;
+    animation-name: burn-left;
+    animation-duration: 300ms;
+
+    &:nth-of-type(2n) {
+      animation-name: burn-right;
+      animation-duration: 400ms;
+    }
+
+    &:nth-of-type(2) {
+      height: 80%;
+      width: 80%;
+      left: 10%;
+      background-color: $orange;
+      background-image: linear-gradient(
+        top right,
+        fade-out($orange, 0.7),
+        fade-out($yellow, 0.7)
+      );
+      z-index: 2;
+    }
+
+    &:nth-of-type(3) {
+      height: 50%;
+      width: 50%;
+      left: 25%;
+      background-image: linear-gradient(top right, $yellow, white);
+      z-index: 3;
+    }
+
+    &:nth-of-type(4) {
+      height: 30%;
+      width: 30%;
+      left: 35%;
+      background-color: white;
+      background-image: linear-gradient(
+        top right,
+        fade-out(white, 0.7),
+        fade-out($blue, 0.1)
+      );
+      opacity: 1;
+      z-index: 4;
+    }
+  }
+}
+
+@keyframes burn-left {
+  0%,
+  100% {
+    transform: rotate(-45deg) skew(-10deg, -10deg) scale(1);
+  }
+  30%,
+  60% {
+    transform: rotate(-44deg) skew(-12deg, -12deg) scale(1.01);
+  }
+}
+
+@keyframes burn-right {
+  0%,
+  100% {
+    transform: rotate(-45deg) skew(-10deg, -10deg) scale(1);
+  }
+  30%,
+  60% {
+    transform: rotate(-46deg) skew(-6deg, -6deg) scale(1.01);
+  }
+}
+
+@keyframes flicker {
+  0% {
+    transform: rotate(-45deg) skew(-10deg, -9deg) scale(1);
+  }
+  30% {
+    transform: rotate(-45deg) skew(-11deg, -12deg) scale(1);
+  }
+  100% {
+    transform: rotate(-45deg) skew(-5deg, -9deg) scale(1);
+  }
+  60% {
+    transform: rotate(-44deg) skew(-12deg, -12deg) scale(1.01);
+  }
+}
+
+.smoke {
+  position: relative;
+  z-index: 40;
+  width: 2px;
+  margin-left: -1px;
+  left: 50%;
+  bottom: 10px;
+  opacity: 0;
+  -webkit-transition: all 800ms linear;
+  transition: all 800ms linear;
+}
+.smoke span {
+  display: block;
+  position: absolute;
+  bottom: -35px;
+  left: 50%;
+  margin-left: -20px;
+  height: 0px;
+  width: 0px;
+  border: 30px solid rgba(0, 0, 0, 0.6);
+  border-radius: 22px;
+  border-bottom-left-radius: 0;
+  border-top-right-radius: 0;
+  left: -9px;
+  opacity: 0;
+  transform: scale(0.2, 0.2) rotate(-45deg);
+}
+@keyframes smokeLeft {
+  0% {
+    transform: scale(0.2, 0.2) translate(0, 0) rotate(-45deg);
+  }
+  10% {
+    opacity: 1;
+    transform: scale(0.2, 0.3) translate(0, -5px) rotate(-45deg);
+  }
+  60% {
+    opacity: 0.6;
+    transform: scale(0.3, 0.5) translate(-10px, -80px) rotate(-45deg);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.4, 0.8) translate(-20px, -120px) rotate(-45deg);
+  }
+}
+@keyframes smokeRight {
+  0% {
+    transform: scale(0.2, 0.2) translate(0, 0) rotate(-45deg);
+  }
+  10% {
+    opacity: 1;
+    transform: scale(0.2, 0.3) translate(0, -5px) rotate(-45deg);
+  }
+  60% {
+    opacity: 0.6;
+    transform: scale(0.3, 0.5) translate(10px, -80px) rotate(-45deg);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.4, 0.8) translate(20px, -120px) rotate(-45deg);
+  }
+}
+.smoke .s-0 {
+  animation: smokeLeft 7s 0s infinite;
+}
+.smoke .s-1 {
+  animation: smokeRight 7s 0.7s infinite;
+}
+.smoke .s-2 {
+  animation: smokeLeft 7s 1.4s infinite;
+}
+.smoke .s-3 {
+  animation: smokeRight 7s 2.1s infinite;
+}
+.smoke .s-4 {
+  animation: smokeLeft 7s 2.8s infinite;
+}
+.smoke .s-5 {
+  animation: smokeRight 7s 3.5s infinite;
+}
+.smoke .s-6 {
+  animation: smokeLeft 7s 4.2s infinite;
+}
+.smoke .s-7 {
+  animation: smokeRight 7s 4.9s infinite;
+}
+.smoke .s-8 {
+  animation: smokeLeft 7s 5.6s infinite;
+}
+.smoke .s-9 {
+  animation: smokeRight 7s 6.3s infinite;
+}
