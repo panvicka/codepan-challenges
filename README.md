@@ -30,6 +30,14 @@ The repo has some opened issues and features ideas, so feel free to contribute i
 - [Project folder](2020Dec_CalendarCountdown/README.md)
 
 
+### Week 2: Holiday Decorations
+- [CodePen demo](https://codepen.io/panvicka/pen/PoGmjjv)
+- [Project folder](2020Dec_HolidayDecoration/README.md)
+
+
+ 
+
+
 
 
 
