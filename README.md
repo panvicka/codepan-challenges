@@ -10,9 +10,13 @@ The repo has some opened issues and features ideas, so feel free to contribute i
 - [CodePen demo](https://codepen.io/panvicka/pen/MWeXVrM)
 - [Project folder](2020Nov_Contrast/README.md)
 
+ ![pin picked](2020Nov_Contrast/pin_picked.PNG)
+
 ### Week 2: Spacing - Clean up and discover (not) hidden joke
 - [CodePen demo](https://codepen.io/panvicka/pen/pobqvyL)
 - [Project folder](2020Nov_Spacing/README.md)
+
+ ![pin picked](2020Nov_Spacing/pin_picked.PNG)
 
 ### Week 3: Repetition - Check out programmer life! 
 - [CodePen demo](https://codepen.io/panvicka/full/eYzwxXK)
@@ -28,6 +32,8 @@ The repo has some opened issues and features ideas, so feel free to contribute i
 ### Week 1: Calendars and Countdowns - New Years Countdown
 - [CodePen demo](https://codepen.io/panvicka/pen/abmmGJZ)
 - [Project folder](2020Dec_CalendarCountdown/README.md)
+
+ ![pin picked](2020Dec_CalendarCountdown/pin_picked.PNG)
 
 
 ### Week 2: Holiday Decorations
