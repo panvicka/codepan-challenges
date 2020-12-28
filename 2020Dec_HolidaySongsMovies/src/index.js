@@ -36,10 +36,7 @@ window.onload = () => {
   createItem("book", "romantic", "Christmas Shopaholic", "Sophie Kinsella", "https://www.amazon.com/Christmas-Shopaholic-Novel-Sophie-Kinsella/dp/0593132831/ref=sr_1_1?dchild=1&keywords=Christmas+Shopaholic&qid=1608740009&s=books&sr=1-1");
 
    
-  var obj = {"video": {
-    "value": "<iframe title='YouTube video player' type=\"text/html\" width='640' height='390' src='http://www.youtube.com/embed/W-Q7RMpINVo' frameborder='0' allowFullScreen></iframe>"
-  }}
-  result.write(obj.video.value);
+ 
 
    
 };
