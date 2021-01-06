@@ -1,3 +1,7 @@
+:root {
+  --YOffset: -50%;
+}
+
 *,
 *::before,
 *::after {
@@ -32,9 +36,10 @@ body {
       -ms-flex-direction: column;
           flex-direction: column;
   border: 1px solid blue;
-  min-height: 100vh;
+  height: 100vh;
+  min-height: 600px;
   max-width: 1000px;
-  min-width: 500px;
+  min-width: 800px;
 }
 
 #slice {
@@ -84,13 +89,22 @@ body {
           justify-content: center;
   border: 5px solid #ff8800;
   height: 100%;
-  width: 20%;
-  min-height: 100%;
+  min-width: 20%;
+  min-height: 100px;
   top: 50%;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
   font-size: 3rem;
   margin: 0 auto;
+  -webkit-transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+  cursor: pointer;
+}
+
+#slider:after {
+  content: "";
+  display: block;
+  padding-bottom: 100%;
 }
 
 template {
