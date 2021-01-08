@@ -40,6 +40,14 @@ The repo has some opened issues and features ideas, so feel free to contribute i
 - [CodePen demo](https://codepen.io/panvicka/pen/PoGmjjv)
 - [Project folder](2020Dec_HolidayDecoration/README.md)
 
+### Week 3: Holiday movies & songs + Week 4: Holiday greeting card
+- I skipped this. I tried but I am just not a festive person. It was not fun.
+
+## 2021 Januar Challenges - States of Matter
+
+### Week 1: Solid
+- [CodePen demo](https://codepen.io/panvicka/pen/GRjBvgV)
+- [Project folder](2021Jan_Solid/README.md)
 
  
 
