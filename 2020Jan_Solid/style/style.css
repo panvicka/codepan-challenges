@@ -1,5 +1,9 @@
+@import url("https://fonts.googleapis.com/css2?family=Big+Shoulders+Inline+Text&family=Big+Shoulders+Stencil+Text:wght@800&family=Big+Shoulders+Text&display=swap");
 :root {
   --YOffset: -50%;
+  --lettersColor: #1c110a;
+  --lettersColorBackground: #e4d6a7;
+  --backgroundColor: #9b2915;
 }
 
 *,
@@ -17,6 +21,11 @@ html {
   padding: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  font-family: 'Big Shoulders Stencil Text', cursive;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 
 body {
@@ -24,18 +33,44 @@ body {
   height: 100vh;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-}
-
-#container {
-  margin: 0 auto;
+  background-color: var(--backgroundColor);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.sidebar {
+  width: 100px;
+  height: 100px;
+  position: fixed;
+}
+
+.sidebar a {
+  color: var(--lettersColor);
+  margin: 0.4em;
+  font-size: 2rem;
+  -webkit-transition: all 0.3s linear;
+  transition: all 0.3s linear;
+  opacity: 70%;
+}
+
+.sidebar a:hover {
+  opacity: 100%;
+}
+
+#container {
+  margin: 0em auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: -10px;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  border: 1px solid blue;
   height: 100vh;
   min-height: 600px;
   max-width: 1000px;
@@ -56,9 +91,23 @@ body {
   display: -ms-flexbox;
   display: flex;
   position: relative;
+  margin-top: -4px;
 }
 
 #text {
+  position: absolute;
+  min-width: 10%;
+  max-width: 15%;
+  margin: 0 auto;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  text-align: center;
+  font-family: 'Big Shoulders Text', cursive;
+  font-size: 1.5rem;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -68,12 +117,6 @@ body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  z-index: -1;
 }
 
 #slider {
@@ -87,7 +130,6 @@ body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  border: 5px solid #ff8800;
   height: 100%;
   min-width: 20%;
   min-height: 100px;
@@ -99,15 +141,17 @@ body {
   -webkit-transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
   transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
   cursor: pointer;
+  font-size: 8rem;
+  color: var(--lettersColor);
+  background-color: var(--lettersColorBackground);
 }
 
-#slider:after {
-  content: "";
-  display: block;
-  padding-bottom: 100%;
+.enhanced {
+  border-left: 20px var(--lettersColor) solid;
+  border-right: 20px var(--lettersColor) solid;
 }
 
-template {
-  background-color: #3d2aa5;
+.border-invisible {
+  border-color: transparent;
 }
 /*# sourceMappingURL=style.css.map */

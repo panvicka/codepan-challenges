@@ -1,6 +1,36 @@
-console.log('hesdy');
-// const containerDiv = <HTMLDivElement>document.getElementById('container');
-// const templateSlice = <HTMLElement>document.getElementById('slice-template');
+type SolidElement = {
+  letter: string;
+  text: string;
+  offset: number;
+};
+
+const arrayOfSolidElements: Array<SolidElement> = [
+  {
+    letter: 'S',
+    text: 'Single-responsibility principle',
+    offset: -23,
+  },
+  {
+    letter: 'O',
+    text: 'Open–closed principle',
+    offset: 18,
+  },
+  {
+    letter: 'L',
+    text: 'Liskov substitution principle',
+    offset: -13,
+  },
+  {
+    letter: 'I',
+    text: 'Interface segregation principle',
+    offset: 12,
+  },
+  {
+    letter: 'D',
+    text: 'Dependency inversion principle',
+    offset: -20,
+  },
+];
 
 class SlideComponent<T extends HTMLElement, U extends HTMLElement> {
   templateElement: HTMLTemplateElement;
@@ -9,15 +39,16 @@ class SlideComponent<T extends HTMLElement, U extends HTMLElement> {
   text: string;
   startPosition: number;
   moved: boolean;
+  letter: string;
   constructor(
     templateId: string,
     hostElementId: string,
-    startPosition: number,
-    text: string
+    solidElement: SolidElement
   ) {
     this.moved = true;
-    this.startPosition = startPosition;
-    this.text = text;
+    this.startPosition = solidElement.offset;
+    this.text = solidElement.text;
+    this.letter = solidElement.letter;
     this.templateElement = <HTMLTemplateElement>(
       document.getElementById(templateId)!
     );
@@ -47,6 +78,8 @@ class SlideComponent<T extends HTMLElement, U extends HTMLElement> {
     const textElement = <HTMLDivElement>this.element.querySelector('#text')!;
     sliderElement.style.transform = `translateY(-50%) translateX(${this.startPosition}rem)`;
     textElement.style.transform = `translateX(${this.startPosition}rem)`;
+    textElement.innerText = this.text;
+    sliderElement.innerText = this.letter;
 
     sliderElement.addEventListener('click', () => {
       let moveOffset;
@@ -56,19 +89,36 @@ class SlideComponent<T extends HTMLElement, U extends HTMLElement> {
       } else {
         moveOffset = `${this.startPosition}rem`;
         this.moved = true;
-
       }
-      console.log(this.moved);      
-      console.log(moveOffset);
-      
-      sliderElement.style.transform = `translateY(-50%) translateX(${moveOffset})`;
+ 
 
-     });
+      sliderElement.style.transform = `translateY(-50%) translateX(${moveOffset})`;
+    });
   }
 }
 
-const slideS = new SlideComponent('template-slice', 'container', 15, 'S');
-const slideL = new SlideComponent('template-slice', 'container', -16, 'O');
-const slideI = new SlideComponent('template-slice', 'container', 13, 'L');
-const slideD = new SlideComponent('template-slice', 'container', -13, 'I');
-const slideE = new SlideComponent('template-slice', 'container',16, 'D');
+const elementsOnPage: Array<any> = [];
+
+arrayOfSolidElements.forEach((item) => {
+  const element = new SlideComponent('template-slice', 'container', item);
+  elementsOnPage.push(element);
+});
+
+document.addEventListener('click', () => {
+  let allElementsMoved = true;
+  elementsOnPage.forEach((element) => {
+    if (element.moved == true) allElementsMoved = false;
+  });
+  if (allElementsMoved) {
+    document.querySelectorAll('#slider').forEach((item) => {
+      setTimeout(() => {
+        item.classList.add('enhanced');
+        item.classList.remove('border-invisible');
+      }, 700);
+    });
+  } else {
+    document.querySelectorAll('#slider').forEach((item) => {
+      item.classList.add('border-invisible');
+    });
+  }
+});
