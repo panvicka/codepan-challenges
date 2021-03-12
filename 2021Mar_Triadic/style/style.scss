@@ -1,0 +1,23 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#drops {
+  animation: drop-falling 5s ease infinite;
+}
+
+@keyframes drop-falling {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(400px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
