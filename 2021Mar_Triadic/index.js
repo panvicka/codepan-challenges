@@ -63,7 +63,7 @@ var pinkGlobAnime = anime({
 
 var pinkDropAnime = anime({
   targets: '.pink-drop',
-  translateY: 1500,
+  translateY: 800,
   scale: 1,
   easing: 'linear',
   delay: 500,

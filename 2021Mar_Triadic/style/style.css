@@ -54,17 +54,17 @@ body {
 
 .blue {
   border-top: 30px solid #00fffc;
-  border-bottom: 250px solid #00fffc;
+  border-bottom: 150px solid #00fffc;
 }
 
 .pink {
   border-top: 30px solid #fc00ff;
-  border-bottom: 250px solid #fc00ff;
+  border-bottom: 150px solid #fc00ff;
 }
 
 .yellow {
   border-top: 30px solid #fffc00;
-  border-bottom: 250px solid #fffc00;
+  border-bottom: 150px solid #fffc00;
 }
 
 #drop {
