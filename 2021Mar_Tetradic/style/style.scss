@@ -1,0 +1,142 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #000000;
+  min-height: 100vh;
+  max-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden; /* Hide scrollbars */
+}
+
+#wrapper {
+  max-height: 100vh;
+  height: 100vh;
+  min-width: 100%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#frog {
+  position: absolute;
+  width: 50%;
+  max-width: 50%;
+  transform-origin: 10% 20%;
+  z-index: 50;
+  animation: blending 5s alternate infinite;
+  margin: auto;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  opacity: 0;
+}
+
+@keyframes blending {
+  0% {
+    opacity: 0;
+  }
+  80% {
+    opacity: 0.8;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+#shape-1 {
+  position: absolute;
+  min-width: 50%;
+  max-width: 50%;
+  animation: spinning-1 5s alternate infinite;
+  margin: auto;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+@keyframes spinning-1 {
+  from {
+    transform: rotate(25deg) scale(0.8);
+  }
+  to {
+    transform: rotate(385deg) scale(2);
+  }
+}
+
+#shape-2 {
+  position: absolute;
+  min-width: 50%;
+  max-width: 50%;
+  animation: spinning-2 5s alternate infinite;
+  margin: auto;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: -8;
+}
+
+@keyframes spinning-2 {
+  from {
+    transform: rotate(3deg) scale(1);
+  }
+  to {
+    transform: rotate(30deg) scale(2.2);
+  }
+}
+
+#shape-3 {
+  position: absolute;
+  min-width: 50%;
+  max-width: 50%;
+  animation: spinning-3 5s alternate infinite;
+  margin: auto;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: -9;
+}
+
+@keyframes spinning-3 {
+  from {
+    transform: rotate(0deg) scale(1.1);
+  }
+  to {
+    transform: rotate(180deg) scale(2.3);
+  }
+}
+
+#shape-4 {
+  position: absolute;
+  min-width: 50%;
+  max-width: 50%;
+  transform: rotate(35deg);
+  animation: spinning-4 5s alternate forwards infinite;
+  margin: auto;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: -10;
+}
+
+@keyframes spinning-4 {
+  from {
+    transform: rotate(0deg) scale(1.2);
+  }
+  to {
+    transform: rotate(360deg) scale(2.4);
+  }
+}
