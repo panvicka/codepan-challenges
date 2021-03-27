@@ -9,7 +9,38 @@
 
 body {
   background-color: #000000;
-  min-height: 100vh;
-  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  font-family: 'Roboto Mono', monospace;
+}
+
+.sidebar {
+  position: absolute;
+  font-size: 1em;
+  left: 0%;
+  top: 0%;
+  padding: 1em;
+}
+
+.sidebar a {
+  display: block;
+  color: #690b0b;
+  opacity: 80%;
+  text-decoration: none;
+  font-size: 0.8em;
+  padding: 0;
+}
+
+.sidebar a:hover {
+  text-decoration: underline;
 }
 /*# sourceMappingURL=style.css.map */
