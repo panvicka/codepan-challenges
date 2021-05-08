@@ -1,14 +1,13 @@
-console.log('hello there');
-
-const wrapper = <HTMLDivElement>document.querySelector('.wrapper')!;
-const birdElement = <HTMLDivElement>document.querySelector('.bird-wrapper')!;
-
-const branchesOnPage: Array<any> = [];
+// find full code here https://github.com/panvicka/codepan-challenges/tree/main/2021May_Birds
 
 const SPEED_FACTOR = 3;
 const BRANCH_WIDTH = 100;
 const BRANCH_HEIGHT = 15;
 const BIRD_HEAD = 35;
+
+const wrapper = <HTMLDivElement>document.querySelector('.wrapper')!;
+const birdElement = <HTMLDivElement>document.querySelector('.bird-wrapper')!;
+const branchesOnPage: Array<any> = [];
 
 class Bird {
   element: HTMLDivElement;
@@ -31,11 +30,30 @@ class Bird {
     this.goalPositionY = 0;
     this.element = htmlElement;
     this.indexOfTargetedBranch = 0;
+    this.place();
+  }
+
+  moveToNextPoint() {
+    const dx = this.goalPositionX - this.currPositionX;
+    const dy = this.goalPositionY - this.currPositionY;
+    const distance = Math.sqrt(dx * dx + dy * dy);
+    const rad = Math.atan2(dy, dx);
+    const angle = (rad / Math.PI) * 180;
+    const velX = (dx / distance) * SPEED_FACTOR;
+    const velY = (dy / distance) * SPEED_FACTOR;
+
+    this.currPositionX += velX;
+    this.currPositionY += velY;
+  }
+
+  place() {
+    this.element.setAttribute(
+      'style',
+      `left: ${this.currPositionX}px; top: ${this.currPositionY}px`
+    );
   }
 
   render() {
-    // console.log('rendering bird');
-
     const arrayOfWingDivs = this.element.querySelectorAll('div[class~="wing"]');
     const arrayOfLegs = this.element.querySelectorAll('div[class~="leg"]');
 
@@ -50,16 +68,7 @@ class Bird {
         div.classList.add('sits');
       });
 
-      const dx = this.goalPositionX - this.currPositionX;
-      const dy = this.goalPositionY - this.currPositionY;
-      const distance = Math.sqrt(dx * dx + dy * dy);
-      const rad = Math.atan2(dy, dx);
-      const angle = (rad / Math.PI) * 180;
-      const velX = (dx / distance) * SPEED_FACTOR;
-      const velY = (dy / distance) * SPEED_FACTOR;
-
-      this.currPositionX += velX;
-      this.currPositionY += velY;
+      this.moveToNextPoint();
 
       this.element.setAttribute(
         'style',
@@ -84,16 +93,12 @@ class Bird {
       arrayOfLegs.forEach((div) => {
         div.classList.remove('sits');
       });
-
-      // console.log(arrayOfWingDivs);
     }
   }
 }
 
-const bird = new Bird(birdElement, 0, 0);
+const bird = new Bird(birdElement, 100, 50);
 bird.isFlying = false;
-
-
 
 class Branch {
   branchType: number;
@@ -101,8 +106,9 @@ class Branch {
   index: number;
   positionX: number;
   positionY: number;
+  width: number;
 
-  constructor(positionX: number, positionY: number) {
+  constructor(positionX: number, positionY: number, width?: number) {
     this.render();
     this.positionX = positionX;
     this.positionY = positionY;
@@ -110,22 +116,27 @@ class Branch {
     this.branchType = 1;
     this.index = 0;
     this.wasVisited = false;
+
+    this.width = width || BRANCH_WIDTH;
   }
 
   render() {
     if (this.positionX !== undefined && this.positionY !== undefined) {
+      console.log(this.width);
       var elem = <HTMLDivElement>document.createElement('div');
       elem.className += ' branch';
+      
       elem.setAttribute(
         'style',
-        `left: ${this.positionX}px; top: ${this.positionY}px`
+        `left: ${this.positionX}px; top: ${this.positionY}px; width: ${this.width}px`
       );
+      
       wrapper.appendChild(elem);
     }
   }
 }
 
-const branch = new Branch(20,118);
+const branch = new Branch(20, 118, 200);
 branch.render();
 
 wrapper.addEventListener('mousedown', (e) => {
@@ -136,8 +147,6 @@ wrapper.addEventListener('mousedown', (e) => {
 });
 
 function animate() {
-  // console.log('animation frame running');
-
   for (let i = 0; i < branchesOnPage.length; i++) {
     if (branchesOnPage[i].wasVisited == 0) {
       bird.goalPositionX =

@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300&display=swap");
 *,
 *::before,
 *::after {
@@ -13,9 +14,26 @@
   background-color: aquamarine;
 }
 
+.sidebar {
+  margin-left: 1.3em;
+  margin-top: 3em;
+  width: 200px;
+}
+
+.sidebar span {
+  font-family: 'Roboto Mono', monospace;
+}
+
+.sidebar a {
+  color: black;
+}
+
+.sidebar a:hover {
+  color: grey;
+}
+
 .branch {
   position: absolute;
-  width: 100px;
   height: 8px;
   border-radius: 1000000px;
   background-color: black;
@@ -91,7 +109,7 @@
   height: 1px;
 }
 
-.bird-wrapper .left-wing {
+.bird-wrapper .wing.left {
   top: 51%;
   left: 19%;
   -webkit-transform: translate(0, -100%) rotate(-19deg);
@@ -100,12 +118,25 @@
           transform-origin: right;
 }
 
-.bird-wrapper .left-wing.fly {
+.bird-wrapper .wing.left.fly {
   -webkit-animation: left-close-wing 0.3s infinite alternate;
           animation: left-close-wing 0.3s infinite alternate;
 }
 
-.bird-wrapper .right-wing {
+.bird-wrapper .wing.left.far {
+  top: 34%;
+  left: -1%;
+  border-radius: 10000px;
+  -webkit-transform-origin: right;
+          transform-origin: right;
+}
+
+.bird-wrapper .wing.left.far.fly {
+  -webkit-animation: left-far-wing 0.3s infinite alternate;
+          animation: left-far-wing 0.3s infinite alternate;
+}
+
+.bird-wrapper .wing.right {
   top: 45%;
   left: 81%;
   border-radius: 10000px;
@@ -115,12 +146,12 @@
           transform-origin: left;
 }
 
-.bird-wrapper .right-wing.fly {
+.bird-wrapper .wing.right.fly {
   -webkit-animation: right-close-wing 0.3s infinite alternate;
           animation: right-close-wing 0.3s infinite alternate;
 }
 
-.bird-wrapper .right-wing-far {
+.bird-wrapper .wing.right.far {
   top: 31%;
   left: 77%;
   border-radius: 10000px;
@@ -128,22 +159,9 @@
           transform-origin: left;
 }
 
-.bird-wrapper .right-wing-far.fly {
+.bird-wrapper .wing.right.far.fly {
   -webkit-animation: right-far-wing 0.3s infinite alternate;
           animation: right-far-wing 0.3s infinite alternate;
-}
-
-.bird-wrapper .left-wing-far {
-  top: 34%;
-  left: -1%;
-  border-radius: 10000px;
-  -webkit-transform-origin: right;
-          transform-origin: right;
-}
-
-.bird-wrapper .left-wing-far.fly {
-  -webkit-animation: left-far-wing 0.3s infinite alternate;
-          animation: left-far-wing 0.3s infinite alternate;
 }
 
 .bird-wrapper div[class*='wing'].sits {
