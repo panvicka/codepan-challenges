@@ -1,0 +1,112 @@
+body {
+  overflow: hidden;
+  margin: 0;
+  font-family: 'Limelight', sans-serif;
+  text-rendering: optimizeLegibility;
+}
+
+.well {
+  position: relative;
+  overflow: hidden;
+  transition: 1s cubic-bezier(0.5, 0, 0.5, 1);
+}
+
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  display: flex;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px;
+  text-decoration: none;
+  overflow: hidden;
+  background-color: #333;
+  z-index: 20;
+  height: 150px;
+}
+
+p {
+  font-size: 1em;
+}
+
+.selections {
+  display: flex;
+  flex-direction: column;
+}
+
+.main-section {
+  display: flex;
+  flex-direction: row;
+}
+
+.flex {
+  display: flex;
+}
+
+label {
+  display: inline-block;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+label span:before,
+label span:after {
+  content: '';
+}
+input {
+  display: none;
+}
+
+label span {
+  position: relative;
+  line-height: 22px;
+}
+
+label span:before {
+  border: 1px solid #222021;
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+  display: inline-block;
+  vertical-align: top;
+}
+
+label span:after {
+  background: #222021;
+  width: 14px;
+  height: 14px;
+  position: absolute;
+  top: 2px;
+  left: 4px;
+  transition: 300ms;
+  opacity: 0;
+}
+
+span.color-blue:after {
+  background: #1506eb;
+ 
+}
+
+ 
+ 
+
+label input:checked + span:after {
+  opacity: 1;
+}
+
+.panel {
+  border: 10px solid blue;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  padding-top: 200px;
+  padding-bottom: 150px;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+
+  box-sizing: border-box;
+
+  cursor: default;
+}
