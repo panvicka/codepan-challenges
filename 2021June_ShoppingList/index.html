@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&family=Gothic+A1&display=swap" rel="stylesheet">
     <title>Shopping List</title>
 </head>
 
@@ -31,61 +33,83 @@
         <div class="item panel">
             <span class="top">&uarr;</span>
             <div class="main-section">
-                <h3>Asics</h3>
-                <figure>
+
+                <div class="content-image">
+                    <h3>Asics</h3>
+                    
+                   
                     <img src="https://assets.codepen.io/t-1/maksim-larin-jZyacqaR4iI-unsplash.jpg"
                         alt="a pair of blue and red ASICS sneakers">
+               
                     <!-- full size image at: https://images.unsplash.com/photo-1560072810-1cffb09faf0f -->
                     <figcaption>Photo by Maksim Larin</figcaption>
 
-                </figure>
-                <div class="text-price">
-                    <p class="description">
-                        Suede fabric pointed toe stylish cut front low heel sharp on-trend toe point raised heel drop
-                        sides
-                        unique
-                        silhouette. Bow detail metallic eyelets leather lining luxurious finish classic courts formal
-                        slingback
-                        square toe contrasting cap. Lace up fastening bow detailing high stiletto heel leather lining
-                        beautiful
-                        lace
-                        upper elegant peep toe t-bar strap. Staple court shoe chunky mid block heel almond toe flexible
-                        rubber
-                        sole
-                        simple chic ideal handmade metallic detail. Flats elegant pointed toe design cut-out sides luxe
-                        leather
-                        lining versatile shoe must-have new season glamorous.</p>
-                    <p class="price">$65 USD</p>
-                    <p class="special">Free Shipping!</p>
                 </div>
-            </div>
-            <div class="selections">
-                <div class="flex">
-                    <label for="size-select">Size:</label>
-                    <label><input type="radio" name="radio-size"><span>6</span></label>
-                    <label><input type="radio" name="radio-size"><span>6.5</span></label>
-                    <label><input type="radio" name="radio-size"><span>7</span></label>
-                    <label><input type="radio" name="radio-size"><span>7.5</span></label>
+                <div class="content">
+                    <div class="price">69$</div>
+                    <div class="free-shipping">Free shipping</div>
+                    <span class="first-info">Suede fabric pointed toe stylish cut front low heel sharp on-trend toe point raised heel drop
+                        sides unique silhouette.</span>
+                    <ul>
+
+                        <li>Bow detail metallic eyelets leather lining luxurious finish classic courts formal slingback
+                            square toe contrasting cap. </li>
+                        <li>Lace up fastening bow detailing high stiletto heel leather lining beautiful lace upper
+                            elegant peep toe t-bar strap. </li>
+                        <li> Staple court shoe chunky mid block heel almond toe flexible rubber sole simple chic ideal
+                            handmade metallic detail. </li>
+                        <li> Flats elegant pointed toe design cut-out sides luxe leather lining versatile shoe must-have
+                            new season glamorous. </li>
+                    </ul>
+
+
+                    <div class="flex flex-row">
+                        <div class="flex flex-columns">
+                           
+                            <label><input type="radio" name="radio-size"><span>6</span></label>
+                            <label><input type="radio" name="radio-size"><span>6.5</span></label>
+                            <label><input type="radio" name="radio-size"><span>7</span></label>
+                            <label><input type="radio" name="radio-size"><span>7.5</span></label>
+                        </div>
+                        <div class="flex flex-columns">
+                           
+                            <label><input type="radio" name="radio-color"><span class="color-blue">sky
+                                    blue</span></label>
+                            <label><input type="radio" name="radio-color"><span class="color-red">devil
+                                    red</span></label>
+                            <label><input type="radio" name="radio-color"><span class="color-black">soul
+                                    black</span></label>
+                            <label><input type="radio" name="radio-color"><span class="color-pink">baby
+                                    pink</span></label>
+                        </div>
+                        <div class="flex flex-columns">
+                            <label for="quantity-select">Quantity:</label>
+                            <select name="quantity" id="quantity-select">
+                                <option value=""></option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                            </select>
+                        </div>
+
+                    </div>
+
+
+
+                  
+                    <p class="special">Free Shipping!</p>
+
+                    <div class="flex flex-row">
+                    <button class="button cart">Add to Cart <i class="fas fa-shopping-cart"></i></button>
+                    <button class="button wishlist">Add to Wishlist<i class="fas fa-heart"></i></button>
                 </div>
 
-                <label for="color-select">Color:</label>
-                     <label><input type="radio" name="radio-color"><span class="color-blue">a</span></label>
-                    <label><input type="radio" name="radio-color"><span class="color-blue">a</span></label>
-                    <label><input type="radio" name="radio-color"><span class="color-blue">a</span></label>
-                    <label><input type="radio" name="radio-color"><span class="color-blue">a</span></label>
-             
-                <label for="quantity-select">Quantity:</label>
-                <select name="quantity" id="quantity-select">
-                    <option value=""></option>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                </select>
-                <button type="button">Add to Cart</button>
+                </div>
             </div>
         </div>
+
 
         <div class="item panel">
             <span class="top">&uarr;</span>

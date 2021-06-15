@@ -1,8 +1,16 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
   overflow: hidden;
   margin: 0;
   font-family: 'Limelight', sans-serif;
   text-rendering: optimizeLegibility;
+
+  font-family: 'Gothic A1', sans-serif;
 }
 
 .well {
@@ -30,11 +38,6 @@ p {
   font-size: 1em;
 }
 
-.selections {
-  display: flex;
-  flex-direction: column;
-}
-
 .main-section {
   display: flex;
   flex-direction: row;
@@ -42,6 +45,14 @@ p {
 
 .flex {
   display: flex;
+}
+
+.flex-columns {
+  flex-direction: column;
+}
+
+.flex-row {
+  flex-direction: row;
 }
 
 label {
@@ -64,7 +75,8 @@ label span {
 }
 
 label span:before {
-  border: 1px solid #222021;
+  border-radius: 50%;
+  border: 5px solid #222021;
   width: 20px;
   height: 20px;
   margin-right: 10px;
@@ -73,23 +85,86 @@ label span:before {
 }
 
 label span:after {
+  border-radius: 50%;
   background: #222021;
-  width: 14px;
-  height: 14px;
+  width: 25px;
+  height: 25px;
   position: absolute;
-  top: 2px;
+  top: 1px;
   left: 4px;
   transition: 300ms;
   opacity: 0;
 }
 
-span.color-blue:after {
-  background: #1506eb;
+h2 {
+  font-family: 'Do Hyeon', sans-serif;
+  font-size: 3em;
+}
+
+h3 {
+  font-family: 'Do Hyeon', sans-serif;
+  font-size: 5em;
+  padding: 0;
+}
+
+button {
+  padding: 20px;
+  font-size: 1.5em;
+  border-radius: 20px;
+  border: 2px solid black;
+  color: rgb(0, 0, 0);
+  font-family: 'Do Hyeon', sans-serif;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+button i {
+  margin-left: 5px;
+}
+
+.cart {
+  background-color: rgb(84, 240, 97);
  
 }
 
- 
- 
+.wishlist {
+  background-color: white;
+}
+
+span.color-black:after {
+  background: #1d1d1fd3;
+  width: 26px;
+  height: 26px;
+}
+span.color-black:before {
+  border: 5px solid #1d1d1fd3;
+}
+span.color-blue:after {
+  background: #1506eb;
+  width: 25px;
+  height: 25px;
+}
+span.color-blue:before {
+  border: 5px solid #1506eb;
+}
+span.color-red:after {
+  background: #eb0606;
+  width: 25px;
+  height: 25px;
+}
+span.color-red:before {
+  border: 5px solid #eb0606;
+}
+span.color-pink:after {
+  background: #bd06eb;
+  width: 25px;
+  height: 25px;
+}
+span.color-pink:before {
+  border: 5px solid #bd06eb;
+}
 
 label input:checked + span:after {
   opacity: 1;
@@ -109,4 +184,92 @@ label input:checked + span:after {
   box-sizing: border-box;
 
   cursor: default;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+}
+
+.first-info {
+  font-size: 2em;
+}
+
+.content-image {
+  display: flex;
+  flex-direction: column;
+
+  align-items: flex-start;
+  padding: 2em;
+  padding-top: 0em;
+}
+
+img {
+  border-radius: 10px;
+}
+
+ul {
+  padding: 2em;
+}
+
+li {
+  padding: 0.3em;
+}
+
+.free-shipping {
+  font-size: 2em;
+  font-weight: bolder;
+  position: absolute;
+  left: 500px;
+  background-color: #f7f7f7;
+  background-image: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    from(#f7f7f7),
+    to(#e7e7e7)
+  );
+  background-image: -webkit-linear-gradient(top, #f7f7f7, #e7e7e7);
+  background-image: -moz-linear-gradient(top, #f7f7f7, #e7e7e7);
+  background-image: -ms-linear-gradient(top, #f7f7f7, #e7e7e7);
+  background-image: -o-linear-gradient(top, #f7f7f7, #e7e7e7);
+  color: #a7a7a7;
+  margin: 36px;
+  width: 144px;
+  height: 144px;
+
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  box-shadow: 0px 3px 8px #aaa, inset 0px 2px 3px #fff;
+}
+
+.price {
+  font-size: 3em;
+  font-weight: bolder;
+  position: absolute;
+  left: 370px;
+  background-color: #f7f7f7;
+  background-image: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    from(#f7f7f7),
+    to(#e7e7e7)
+  );
+  background-image: -webkit-linear-gradient(top, #f7f7f7, #e7e7e7);
+  background-image: -moz-linear-gradient(top, #f7f7f7, #e7e7e7);
+  background-image: -ms-linear-gradient(top, #f7f7f7, #e7e7e7);
+  background-image: -o-linear-gradient(top, #f7f7f7, #e7e7e7);
+  color: #a7a7a7;
+  margin: 36px;
+  width: 144px;
+  height: 144px;
+
+  text-align: center;
+  line-height: 144px;
+  border-radius: 50%;
+  box-shadow: 0px 3px 8px #aaa, inset 0px 2px 3px #fff;
 }
