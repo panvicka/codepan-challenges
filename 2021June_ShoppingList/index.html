@@ -17,41 +17,44 @@
 
     <nav>
         <header>
-            <h1 id="brand-name">LikeNuShus</h1>
-            <p class="tagline">Lightly Used Shoes, Cheap!</p>
             <svg viewBox="0 0 640 512" width="100" title="shoe-logo" id="logo">
                 <path
                     d="M192 160h32V32h-32c-35.35 0-64 28.65-64 64s28.65 64 64 64zM0 416c0 35.35 28.65 64 64 64h32V352H64c-35.35 0-64 28.65-64 64zm337.46-128c-34.91 0-76.16 13.12-104.73 32-24.79 16.38-44.52 32-104.73 32v128l57.53 15.97c26.21 7.28 53.01 13.12 80.31 15.05 32.69 2.31 65.6.67 97.58-6.2C472.9 481.3 512 429.22 512 384c0-64-84.18-96-174.54-96zM491.42 7.19C459.44.32 426.53-1.33 393.84.99c-27.3 1.93-54.1 7.77-80.31 15.04L256 32v128c60.2 0 79.94 15.62 104.73 32 28.57 18.88 69.82 32 104.73 32C555.82 224 640 192 640 128c0-45.22-39.1-97.3-148.58-120.81z" />
             </svg>
+            <div class="name">
+                <h1 id="brand-name">LikeNuShus</h1>
+                <p class="tagline">Lightly Used Shoes, Cheap!</p>
+            </div>
         </header>
-        <h2>Clearance Items</h2>
-        <p class="category-description">Gently used floor model sneakers and discontinued styles at our lowest prices of
-            the
-            year. Get 'em before they're gone!</p>
+        <div class="nav-clearance">
+
+            <p class="category-description">Gently used floor model sneakers and discontinued styles at our lowest
+                prices of the year. Get 'em before they're gone!</p>
+
+
+        </div>
+        <div>
+            <a href="https://github.com/panvicka/codepan-challenges"><i class="fab fa-github"></i></a>
+            <a href="https://twitter.com/panvicka"><i class="fab fa-twitter"></i></a>
+        </div>
     </nav>
     <div class="well" id="well">
         <div class="item panel">
-            <span class="top">&uarr;</span>
             <div class="main-section">
-
                 <div class="content-image">
                     <h3>Asics</h3>
-                    
-                   
-                    <img src="https://assets.codepen.io/t-1/maksim-larin-jZyacqaR4iI-unsplash.jpg"
-                        alt="a pair of blue and red ASICS sneakers">
-               
-                    <!-- full size image at: https://images.unsplash.com/photo-1560072810-1cffb09faf0f -->
-                    <figcaption>Photo by Maksim Larin</figcaption>
-
-                </div>
-                <div class="content">
                     <div class="price">69$</div>
                     <div class="free-shipping">Free shipping</div>
-                    <span class="first-info">Suede fabric pointed toe stylish cut front low heel sharp on-trend toe point raised heel drop
+                    <img src="https://assets.codepen.io/t-1/maksim-larin-jZyacqaR4iI-unsplash.jpg"
+                        alt="a pair of blue and red ASICS sneakers">
+                    <!-- full size image at: https://images.unsplash.com/photo-1560072810-1cffb09faf0f -->
+                    <figcaption>Photo by Maksim Larin</figcaption>
+                </div>
+                <div class="content">
+                    <span class="first-info">Suede fabric pointed toe stylish cut front low heel sharp on-trend toe
+                        point raised heel drop
                         sides unique silhouette.</span>
                     <ul>
-
                         <li>Bow detail metallic eyelets leather lining luxurious finish classic courts formal slingback
                             square toe contrasting cap. </li>
                         <li>Lace up fastening bow detailing high stiletto heel leather lining beautiful lace upper
@@ -61,18 +64,14 @@
                         <li> Flats elegant pointed toe design cut-out sides luxe leather lining versatile shoe must-have
                             new season glamorous. </li>
                     </ul>
-
-
-                    <div class="flex flex-row">
-                        <div class="flex flex-columns">
-                           
+                    <div class="flex flex-row space-between">
+                        <div class="flex flex-columns sizes">
                             <label><input type="radio" name="radio-size"><span>6</span></label>
                             <label><input type="radio" name="radio-size"><span>6.5</span></label>
                             <label><input type="radio" name="radio-size"><span>7</span></label>
                             <label><input type="radio" name="radio-size"><span>7.5</span></label>
                         </div>
-                        <div class="flex flex-columns">
-                           
+                        <div class="flex flex-columns colors">
                             <label><input type="radio" name="radio-color"><span class="color-blue">sky
                                     blue</span></label>
                             <label><input type="radio" name="radio-color"><span class="color-red">devil
@@ -82,141 +81,133 @@
                             <label><input type="radio" name="radio-color"><span class="color-pink">baby
                                     pink</span></label>
                         </div>
-                        <div class="flex flex-columns">
-                            <label for="quantity-select">Quantity:</label>
-                            <select name="quantity" id="quantity-select">
-                                <option value=""></option>
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                <option value="5">5</option>
-                            </select>
+                        <div class="flex flex-row">
+                            <button class="button cart">Add to Cart <br> <i class="fas fa-shopping-cart"></i></button>
+                            <button class="button wishlist">Add to Wishlist <br><i class="fas fa-heart"></i></button>
                         </div>
-
                     </div>
-
-
-
-                  
-                    <p class="special">Free Shipping!</p>
-
-                    <div class="flex flex-row">
-                    <button class="button cart">Add to Cart <i class="fas fa-shopping-cart"></i></button>
-                    <button class="button wishlist">Add to Wishlist<i class="fas fa-heart"></i></button>
-                </div>
-
                 </div>
             </div>
         </div>
 
 
-        <div class="item panel">
-            <span class="top">&uarr;</span>
-            <h3>Adidas</h3>
-            <figure>
-                <img src="https://assets.codepen.io/t-1/daniel-storek-JM-qKEd1GMI-unsplash.jpg"
-                    alt="a pair of white Adidas sneakers with red and blue trim">
-                <!-- full size image at: https://images.unsplash.com/flagged/photo-1556637640-2c80d3201be8 -->
-                <figcaption>Photo by Daniel Storek</figcaption>
-            </figure>
-            <p class="description">
-                Effortless comfortable full leather lining eye-catching unique detail to the toe low 'cut-away' sides
-                clean
-                and sleek. Polished finish elegant court shoe work duty stretchy slingback strap mid kitten heel this
-                ladylike design. Suede fabric pointed toe stylish cut front low heel sharp on-trend toe point raised
-                heel
-                drop sides unique silhouette. Effortless comfortable full leather lining eye-catching unique detail to
-                the
-                toe low 'cut-away' sides clean and sleek.</p>
 
-            <p class="price">$30 USD</p>
 
-            <label for="size-select">Size:</label>
-            <select name="size" id="size-select">
-                <option value=""></option>
-                <option value="6">6</option>
-                <option value="6.5" disabled>6.5</option>
-                <option value="7">7</option>
-                <option value="7">7.5</option>
-                <option value="8">8</option>
-                <option value="9">9</option>
-                <option value="9.5" disabled>9.5</option>
-                <option value="10" disabled>10</option>
-            </select>
-
-            <label for="color-select">Color:</label>
-            <select name="color" id="color-select">
-                <option value=""></option>
-                <option value="olive">olive & black</option>
-                <option value="blue">blue & black</option>
-                <option value="pink">pink & black</option>
-            </select>
-
-            <label for="quantity-select">Quantity:</label>
-            <select name="quantity" id="quantity-select">
-                <option value=""></option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-            </select>
-
-            <button type="button">Add to Cart</button>
-        </div>
 
         <div class="item panel">
-            <span class="top">&uarr;</span>
-            <h3>New Balance</h3>
-            <figure>
-                <img src="https://assets.codepen.io/t-1/felipepelaquim-6zO5VKogoZE-unsplash.jpg"
-                    alt="a New Balance sneaker in olive drab with a black logo">
-                <!-- full size image at: https://images.unsplash.com/photo-1539185441755-769473a23570 -->
-                <figcaption>Photo by felipepelaquim</figcaption>
-            </figure>
-            <p class="description">
-                Suede fabric pointed toe stylish cut front low heel sharp on-trend toe point raised heel drop sides
-                unique
-                silhouette. Bow detail metallic eyelets leather lining luxurious finish classic courts formal slingback
-                square toe contrasting cap. Lace up fastening bow detailing high stiletto heel leather lining beautiful
-                lace
-                upper elegant peep toe t-bar strap. Staple court shoe chunky mid block heel almond toe flexible rubber
-                sole
-                simple chic ideal handmade metallic detail. Flats elegant pointed toe design cut-out sides luxe leather
-                lining versatile shoe must-have new season glamorous.</p>
-            <p class="price">$45 USD</p>
-            <p class="special">Just One Left!</p>
-            <select name="size" id="size-select">
-                <option value=""></option>
-                <option value="6">6</option>
-                <option value="6.5" disabled>6.5</option>
-                <option value="7" disabled>7</option>
-                <option value="7" disabled>7.5</option>
-                <option value="8" disabled>8</option>
-                <option value="9" disabled>9</option>
-                <option value="9.5" disabled>9.5</option>
-                <option value="10" disabled>10</option>
-            </select>
-            <label for="color-select">Color:</label>
-            <select name="color" id="color-select">
-                <option value=""></option>
-                <option value="red-blue">white with red and blue trim</option>
-                <option value="black" disabled>white with black trim</option>
-            </select>
-            <label for="quantity-select">Quantity:</label>
-            <select name="quantity" id="quantity-select">
-                <option value=""></option>
-                <option value="1">1</option>
-                <option value="2" disabled>2</option>
-                <option value="3" disabled>3</option>
-                <option value="4" disabled>4</option>
-                <option value="5" disabled>5</option>
-            </select>
-            <button type="button">Add to Cart</button>
+            <div class="main-section">
+                <div class="content-image">
+                    <h3>Adidas</h3>
+                    <div class="price">30$</div>
+
+                    <img src="https://assets.codepen.io/t-1/daniel-storek-JM-qKEd1GMI-unsplash.jpg"
+                        alt="a pair of white Adidas sneakers with red and blue trim">
+                    <!-- full size image at: https://images.unsplash.com/photo-1560072810-1cffb09faf0f -->
+                    <figcaption>Photo by Daniel Storek</figcaption>
+                </div>
+                <div class="content">
+                    <span class="first-info"> Effortless comfortable full leather lining eye-catching unique detail to
+                        the toe low 'cut-away' sides
+                        clean
+                        and sleek.</span>
+                    <ul>
+                        <li>Polished finish elegant court shoe work duty stretchy slingback strap mid kitten heel this
+                            ladylike design. </li>
+                        <li>Suede fabric pointed toe stylish cut front low heel sharp on-trend toe point raised
+                            heel
+                            drop sides unique silhouette. </li>
+                        <li> Effortless comfortable full leather lining eye-catching unique detail to
+                            the
+                            toe low 'cut-away' sides clean and sleek. </li>
+
+                    </ul>
+                    <div class="flex flex-row space-between">
+                        <div class="flex flex-columns sizes">
+                            <label><input type="radio" name="radio-size"><span>6</span></label>
+                            <label><input type="radio" name="radio-size"><span>6.5</span></label>
+                            <label><input type="radio" name="radio-size"><span>7</span></label>
+                            <label><input type="radio" name="radio-size"><span>7.5</span></label>
+                        </div>
+                        <div class="flex flex-columns colors">
+                            <label><input type="radio" name="radio-color"><span class="color-blue">sky
+                                    blue</span></label>
+                            <label><input type="radio" name="radio-color"><span class="color-red">devil
+                                    red</span></label>
+                            <label><input type="radio" name="radio-color"><span class="color-black">soul
+                                    black</span></label>
+                            <label><input type="radio" name="radio-color"><span class="color-pink">baby
+                                    pink</span></label>
+                        </div>
+                        <div class="flex flex-row">
+                            <button class="button cart">Add to Cart <br> <i class="fas fa-shopping-cart"></i></button>
+                            <button class="button wishlist">Add to Wishlist <br><i class="fas fa-heart"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
 
-    </div>
+
+
+
+
+        <div class="item panel">
+            <div class="main-section">
+                <div class="content-image">
+                    <h3>New Balance</h3>
+                    <div class="price">30$</div>
+
+                    <img src="https://assets.codepen.io/t-1/felipepelaquim-6zO5VKogoZE-unsplash.jpg"
+                        alt="a New Balance sneaker in olive drab with a black logo">
+                    <!-- full size image at: https://images.unsplash.com/photo-1560072810-1cffb09faf0f -->
+                    <figcaption>Photo by felipepelaquim</figcaption>
+                </div>
+                <div class="content">
+                    <span class="first-info"> Suede fabric pointed toe stylish cut front low heel sharp on-trend toe
+                        point raised heel drop sides
+                        unique
+                        silhouette.</span>
+                    <ul>
+                        <li>Bow detail metallic eyelets leather lining luxurious finish classic courts formal slingback
+                            square toe contrasting cap. </li>
+                        <li>Lace up fastening bow detailing high stiletto heel leather lining beautiful
+                            lace
+                            upper elegant peep toe t-bar strap. </li>
+                        <li> Staple court shoe chunky mid block heel almond toe flexible rubber
+                            sole
+                            simple chic ideal handmade metallic detail. </li>
+                        <li>
+                            Flats elegant pointed toe design cut-out sides luxe leather
+                            lining versatile shoe must-have new season glamorous
+                        </li>
+                    </ul>
+                    <div class="flex flex-row space-between">
+                        <div class="flex flex-columns sizes">
+                            <label><input type="radio" name="radio-size"><span>6</span></label>
+                            <label><input type="radio" name="radio-size"><span>6.5</span></label>
+                            <label><input type="radio" name="radio-size"><span>7</span></label>
+                            <label><input type="radio" name="radio-size"><span>7.5</span></label>
+                        </div>
+                        <div class="flex flex-columns colors">
+                            <label><input type="radio" name="radio-color"><span class="color-blue">sky
+                                    blue</span></label>
+                            <label><input type="radio" name="radio-color"><span class="color-red">devil
+                                    red</span></label>
+                            <label><input type="radio" name="radio-color"><span class="color-black">soul
+                                    black</span></label>
+                            <label><input type="radio" name="radio-color"><span class="color-pink">baby
+                                    pink</span></label>
+                        </div>
+                        <div class="flex flex-row">
+                            <button class="button cart">Add to Cart <br> <i class="fas fa-shopping-cart"></i></button>
+                            <button class="button wishlist">Add to Wishlist <br><i class="fas fa-heart"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+ 
     <script src="index.js"></script>
 </body>
 
