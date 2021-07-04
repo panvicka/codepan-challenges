@@ -1,40 +1,102 @@
 @import url('https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400;0,600;1,400;1,500&display=swap');
+
+:root {
+  --black-text: #1d1f1c;
+  --white-ish: #f6f5f5;
+  --darker-accent: #ebe9e9;
+}
+
 *,
 *::after,
 *::before {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+}
+
+body {
   font-family: 'Alegreya', serif;
   font-size: 10px;
-  color: #1D1F1C;
+  color: var(--black-text);
 }
 
-img {
-  width: 50px;
+body.preload * {
+  animation-duration: 0s !important;
+  -webkit-animation-duration: 0s !important;
+  transition: background-color 0s, opacity 0s, color 0s, width 0s, height 0s,
+    padding 0s, margin 0s !important;
 }
 
+a {
+  color: #000000;
+  text-decoration: none;
+  font-weight: 900;
+}
 
-.small {
-  width: 20px;
+a:hover {
+  color: var(--black-text);
+  text-decoration: underline;
 }
 
 .container {
-  border: 1px solid blue;
+  -webkit-box-shadow: -10px 0px 13px -7px var(--black-text),
+    10px 0px 13px -7px var(--black-text),
+    5px 5px 15px 12px rgba(163, 163, 163, 0);
+  box-shadow: -10px 0px 13px -7px var(--black-text),
+    10px 0px 13px -7px var(--black-text),
+    5px 5px 15px 12px rgba(163, 163, 163, 0);
   margin: 0 auto;
+  margin-top: 3em;
+  margin-bottom: 3em;
   width: 1000px;
-  background-color: #f6f5f5;
+  background-color: var(--white-ish);
 }
 
-.section {
-  position: relative;
- 
-  padding-top: 2em;
-  padding-bottom: 2em;
+/** HEADERS **/
+
+h3 {
+  font-size: 3rem;
+  font-weight: normal;
 }
 
-.darker {
-  background-color: #d1cece;
+h2 {
+  font-size: 3rem;
+  font-weight: normal;
+}
+
+h2:before {
+  content: '~ ';
+  font-size: 3rem;
+  font-weight: normal;
+}
+
+h2:after {
+  content: ' ~ ';
+  font-size: 3rem;
+  font-weight: normal;
+}
+
+h3:before {
+  content: '~ ';
+  font-size: 3rem;
+  font-weight: normal;
+  position: absolute;
+  left: 25%;
+}
+
+h3:after {
+  content: ' ~';
+  font-size: 3rem;
+  font-weight: normal;
+}
+
+/** HEADER **/
+
+nav {
+  height: 300px;
+  background-image: url('https://images.unsplash.com/photo-1511920170033-f8396924c348?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2134&q=80');
+  background-size: 120%;
+  background-position: 1% 81%;
 }
 
 .header {
@@ -45,30 +107,96 @@ img {
   padding-left: 2em;
 }
 
-.header span:nth-child(1) { 
- 
+.header span:nth-child(1) {
   opacity: 60%;
-  }
-
-.header span:nth-child(2) { 
-margin-left: 0.8em;
- 
 }
 
-.header span:nth-child(3) { 
+.header span:nth-child(2) {
+  margin-left: 0.8em;
+  transition: 1s margin-left linear;
+}
+
+.header span:nth-child(2):hover {
+  margin-left: 0em;
+}
+
+.header span:nth-child(3) {
   margin-left: 2.1em;
-  }
+  transition: 1s margin-left linear;
+}
+
+.header span:nth-child(3):hover {
+  margin-left: 0em;
+}
 
 .header span {
-
   display: block;
-  font-size: 10rem;
-  font-weight:bold;
+  font-size: 6.5rem;
+  font-weight: bold;
   color: rgb(0, 0, 0);
   margin-top: 0px;
-  margin-bottom: -0.5em;
+  margin-bottom: -0.4em;
 }
 
+/** MENU SECTIONS **/
+.section {
+  position: relative;
+  padding-top: 2em;
+  padding-bottom: 2em;
+  opacity: 90%;
+  transition: opacity 1s forwards;
+  color: var(--black-text);
+}
+
+.section:hover {
+  opacity: 100%;
+  -webkit-box-shadow: -10px 0px 13px -7px #525252b0,
+    10px 0px 13px -7px #525252b0, 5px 5px 15px 5px rgba(145, 145, 145, 0.06);
+  box-shadow: -10px 0px 13px -7px #525252b0, 10px 0px 13px -7px #525252b0,
+    5px 5px 15px 5px rgba(145, 145, 145, 0.06);
+}
+
+.section + .darker {
+  background-color: var(--darker-accent);
+}
+
+.section .line-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+.section .line-header {
+  font-weight: bolder;
+}
+
+.line-container {
+  padding: 0.2em;
+  margin: 0.2em;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.line-header {
+  text-align: right;
+  min-width: 10em;
+  max-width: 10em;
+  margin-right: 2em;
+  font-size: 2.25em;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+}
+
+.line-content {
+  font-size: 1.9em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/** PRICES **/
 
 .prices {
   position: absolute;
@@ -77,9 +205,10 @@ margin-left: 0.8em;
   align-items: flex-end;
   flex-direction: row;
   right: 0%;
-  width: 10em;
+  width: 20em;
   height: 6em;
-  border: 1px solid green;
+  margin-right: 2em;
+  margin-top: 2em;
 }
 
 .price {
@@ -87,74 +216,83 @@ margin-left: 0.8em;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-left: 1em;
+  margin-left: 0.5em;
   min-width: 4px;
+  font-size: 3em;
 }
-
- 
-
 
 .price span {
-text-align: center;
+  text-align: center;
+  margin-top: -10px;
 }
 
-.section {
-  border: 1px solid red;
+.price img {
+  width: 50px;
 }
 
-.line-container {
-  border: 1px solid pink;
+.price .small {
+  width: 30px;
+}
+
+/** FOOTER **/
+
+footer {
   display: flex;
   flex-direction: row;
-  justify-content: flex-start;
 }
 
-nav {
-  height: 300px;
-  background-image: url('https://images.unsplash.com/photo-1511920170033-f8396924c348?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2134&q=80');
-  background-size: 120%;
-  background-position: 1% 81%;
+footer img {
+  width: 50em;
+  height: 600px;
+  object-fit: cover;
 }
 
-h3 {
-  font-size: 4rem;
-  font-weight: normal;
-}
-
-
-h3:before {
-content: "~ ";
-font-size: 4rem;
-font-weight: normal;
-position: absolute;
-left: 25%;
-}
-
-h3:after {
-  content: " ~";
-  font-size: 4rem;
-  font-weight: normal;
-  }
-
-.line-container {
-  padding: 0.2em;
-  margin: 0.2em;
-}
-
-.line-header {
-  text-align: right;
-  width: 10em;
-  margin-right: 2em;
-  font-size: 2.25em;
+footer .info {
+  flex: 1;
   display: flex;
-  justify-content: flex-end;
+  flex-direction: column;
   align-items: center;
+  justify-content: space-between;
+  padding: 3em;
+  padding-top: 5em;
 }
 
-.line-content {
+footer .opening-hours {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+footer .opening-hours .line-header {
+  min-width: 5em;
+  max-width: 5em;
+}
+
+footer address .line-container .line-header {
+  font-size: 0.9rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-width: 5em;
+  max-width: 5em;
+}
+
+address {
+  margin-top: 3em;
+  flex: 1;
+}
+
+address i {
+  font-size: 2em;
+}
+
+footer .resources {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
   font-size: 1.5em;
   text-align: left;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
+  width: 100%;
 }
