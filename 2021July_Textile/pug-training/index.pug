@@ -1,0 +1,70 @@
+//- dont mind this, just learning pug for the very first time, I will leave it here for future reference :)
+doctype html 
+html
+    head
+        link(rel="stylesheet" href="style.css")
+        style. 
+            strong {
+                color:red;
+                text-decoration: underline;
+            }
+    body
+        h1#pageTitle Welcome
+        
+        p.text-inside 
+            text text text text rer
+            text line line line 
+                    
+        p.text-inside 
+            text text text text 
+            text line line line 
+
+        input(type="password" name="pwd" data-js=`${5 > 2 ? "OK" : "NOT-OK"}`)
+
+        - const myClasses=["class1", "class2", "class3"]
+        div.initial-class(class=myClasses)
+
+        - const myStyles = {"color": "red", "background-color":"blue"}
+        div(style=myStyles)
+
+
+        - const myAttributes = {"src": "myPhoto.png", "alt":"this is my Photo"}
+        img&attributes(myAttributes)
+
+
+        input(type="text" disabled="false")
+
+        - const pinkStyles = {"color": "pink"}
+        p(style=pinkStyles) bla bla
+
+        ul 
+            li(style="color:blue") item1 
+            li(style=pinkStyles) item2 tu tut i
+            li item3 
+            li item4  
+
+        .display-box
+        #this-is-div
+
+
+        h1 For/Each loop 
+        each n,i in [1,2,3,4,5]
+            p='value '+ n + '-' + 'index' + i
+            p n i
+
+
+        h1 For/Each loop 2
+
+        - const grades = {'WebDev' : 85, "SW": 76};
+        each n, i in grades 
+            p= `${n} - ${i}`
+
+
+        h2 Hello
+        - let user = {name: "Tom", loggedIn: true, lastLogin: 6}
+        if user.loggedIn 
+            p 
+                | Welcome back
+                strong #{user.name}
+        else 
+            a(href="/login") log in
