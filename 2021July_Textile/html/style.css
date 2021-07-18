@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat&display=swap');
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --t-1-size: 1em;
+  --template-1-base-height: 6em;
+  --template-1-color: black;
+}
+
+body {
+  background-color: rgba(255, 255, 255, 0.637);
+  padding: var(--t-1-size);
+  font-size: 10px;
+}
+
+h1 {
+  letter-spacing: 0.5em;
+  text-align: center;
+  margin-bottom: 0.4em;
+  margin-top: 1em;
+  font-family: 'Bebas Neue', cursive;
+  font-size: 2em;
+}
+
+p {
+  letter-spacing: 0em;
+  text-align: center;
+  font-size: 1em;
+  margin-bottom: 2em;
+  font-family: 'Montserrat', sans-serif;
+}
+
+input {
+  background-color: #9a905d;
+  width: 200px;
+  display: block;
+  margin: 0 auto;
+  height: 2em;
+  transform: scale(2);
+  margin-bottom: 2em;
+}
+
+.temp-1-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 80%;
+  max-width: 2000px;
+  margin: 0 auto;
+}
+
+.square {
+  margin-right: var(--t-1-size);
+  margin-top: var(--t-1-size);
+  width: var(--t-1-size);
+  height: var(--t-1-size);
+  background-color: var(--template-1-color);
+  box-shadow: calc(var(--t-1-size) - var(--t-1-size) / 4)
+      calc(var(--t-1-size) / 4) 0 calc(var(--t-1-size) / 4 * -1)
+      var(--template-1-color),
+    calc(var(--t-1-size) / 4 * -1) calc(var(--t-1-size) - var(--t-1-size) / 4) 0
+      calc(var(--t-1-size) / 4 * -1) var(--template-1-color),
+    calc((var(--t-1-size) - var(--t-1-size) / 4) * -1)
+      calc(var(--t-1-size) / 4 * -1) 0 calc(var(--t-1-size) / 4 * -1)
+      var(--template-1-color),
+    calc(var(--t-1-size) / 4) calc((var(--t-1-size) - var(--t-1-size) / 4) * -1)
+      0 calc(var(--t-1-size) / 4 * -1) var(--template-1-color);
+}
