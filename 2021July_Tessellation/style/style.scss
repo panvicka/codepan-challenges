@@ -1,0 +1,79 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  position: relative;
+}
+
+.container {
+    background-color: rgb(16, 3, 34);
+  width: 100%;
+  max-width: 2000px;
+  max-height: 1500px;
+  height: 100vh;  
+  position: relative;
+  display: flex;
+  
+ 
+}
+
+
+
+.snail-container {
+    margin: 0 auto;
+    background-color: rgb(16, 3, 34);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    overflow: hidden;
+
+}
+
+svg {
+  position: absolute;
+  transform-origin: center;
+  opacity: 50%;
+}
+
+svg:hover {
+    opacity: 100%;
+}
+
+$snails: 20;
+$rows: 60;
+$topOffset: -980;
+$leftOffset: -650;
+
+$distX: 25px;
+$distY: 130px;
+$rowSpacing: 113px;
+.snail-x-1 {
+  transform: rotate(180deg);
+}
+
+@mixin snail-calc {
+  @for $j from 1 through $rows {
+    @for $i from 0 through $snails {
+      .snail-r-#{$j}.snail-y-#{$i}.snail-x-1 {
+        left: $leftOffset + ($i * $distX) + $j * $rowSpacing + 75px;
+      }
+      .snail-r-#{$j}.snail-y-#{$i}.snail-x-0 {
+        left: $leftOffset +($i * $distX) + $j * $rowSpacing;
+      }
+      .snail-r-#{$j}.snail-y-#{$i} {
+        top: $topOffset +($i * $distY) + 42px * $j;
+      }
+
+      .snail-r-#{$j}.snail-y-#{$i}.snail-x-1 {
+        top: $topOffset +($i * $distY) + 42px* $j + 45px;
+      }
+    }
+  }
+}
+
+@include snail-calc();
