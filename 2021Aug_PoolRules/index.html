@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css">
+    <title>Pool rules</title>
+</head>
+
+<body>
+    <div class="life-rings">
+        <span class="letter-o-1"><img src="https://img.icons8.com/doodle/50/000000/lifebuoy--v1.png" /></span>
+        <span class="letter-o-2"><img src="https://img.icons8.com/doodle/50/000000/lifebuoy--v1.png" /></span>
+    </div>
+
+    <div class="pool">
+
+
+        <div class="water">
+
+            <div class="text-inside">
+                <div class="rule">&#8203; <span class="letter-p">P</span> <span class="letter-l">L</span> </div>
+                <div class="line"></div>
+                <div class="rule"> No Food, Drinks, or Glass</div>
+                <div class="line"></div>
+                <div class="rule"> No Running</div>
+                <div class="line"></div>
+                <div class="rule"> No Animals</div>
+                <div class="line"></div>
+                <div class="rule"> No Diving</div>
+                <div class="line"></div>
+                <div class="rule small"> No Lifeguard On Duty - Swim at your own risk</div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <footer>
+        <a href="https://www.freepik.com/vectors/water">Water vector created by zaie - www.freepik.com</a>
+        <a href="https://icons8.com/icon/81715/lifebuoy">Life Ring Icon</a>
+        <a href="https://redstapler.co/realistic-water-effect-svg-turbulence-filter/">Realistic Water Effect using SVG
+            Turbulence Filter</a>
+        <div>
+            <a href="https://github.com/panvicka/codepan-challenges"><i class="fab fa-github"></i></a>
+            <a href="https://twitter.com/panvicka"><i class="fab fa-twitter"></i></a>
+        </div>
+    </footer>
+    <svg>
+        <filter id="turbulence" x="0" y="0" width="100%" height="100%">
+            <feTurbulence id="sea-filter" numOctaves="2" seed="1" baseFrequency="0.02 0.05"></feTurbulence>
+            <feDisplacementMap scale="8" in="SourceGraphic"></feDisplacementMap>
+            <animate xlink:href="#sea-filter" attributeName="baseFrequency" dur="50s" keyTimes="0;0.5;1"
+                values="0.02 0.06;0.04 0.08;0.02 0.04" repeatCount="indefinite" />
+        </filter>
+    </svg>
+</body>
+
+
+</html>

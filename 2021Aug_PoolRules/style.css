@@ -1,0 +1,216 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Paytone+One&display=swap');
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Paytone One', sans-serif;
+  /* height: 100vh; */
+}
+
+h1 {
+  position: absolute;
+}
+
+.letter-p,
+.letter-l {
+  font-size: 80px;
+  position: absolute;
+  top: -10px;
+}
+
+.letter-p {
+  left: 350px;
+  top: -10px;
+}
+
+.letter-l {
+  position: absolute;
+  left: 545px;
+}
+
+.pool {
+  margin-top: 100px;
+  border-radius: 20px;
+  width: 1000px;
+  height: 650px;
+  position: relative;
+  border: 10px solid black;
+  background-color: rgb(124, 241, 245);
+}
+
+.life-rings {
+  position: absolute;
+  z-index: 50;
+  top: 92px;
+  font-size: 90px;
+  /* animation: water-floating alternate infinite 10s; */
+}
+
+.letter-o-1 {
+  display: inline-block;
+  top: 80px;
+  color: blue;
+  transform: rotate(30deg);
+  animation: water-floating alternate infinite 10s;
+}
+
+@keyframes water-floating {
+  0% {
+    top: 80px;
+    transform: rotate(30deg) scale(1.05);
+  }
+
+  20% {
+    top: 130px;
+    left: -5%;
+    transform: rotate(50deg) scale(0.98);
+  }
+
+  50% {
+    top: 150px;
+    left: -13%;
+    transform: rotate(70deg) scale(0.98);
+  }
+
+  80% {
+    top: 70px;
+    left: -30%;
+    transform: rotate(1deg) scale(0.99);
+  }
+
+  100% {
+    top: 80px;
+    transform: rotate(30deg) scale(1.05);
+  }
+}
+
+.letter-o-2 {
+  display: inline-block;
+  top: 120px;
+  transform: rotate(60deg);
+  animation: water-floating-o2 alternate infinite 20s;
+}
+
+@keyframes water-floating-o2 {
+  0% {
+    top: 70px;
+    transform: rotate(40deg) scale(0.978);
+  }
+
+  20% {
+    top: 90px;
+    left: 5%;
+    transform: rotate(45deg) scale(0.98);
+  }
+
+  50% {
+    top: 150px;
+    left: 3%;
+    transform: rotate(90deg) scale(1.05);
+  }
+
+  60% {
+    top: 70px;
+    left: -30%;
+    transform: rotate(1deg) scale(0.99);
+  }
+
+  100% {
+    top: 80px;
+    transform: rotate(30deg) scale(1.05);
+  }
+}
+
+.text-inside {
+  position: absolute;
+  width: 1000px;
+  height: 650px;
+  margin: 0 auto;
+  /* top: 100px; */
+}
+
+.water {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-size: cover;
+  background-image: url('water-4.jpg');
+  opacity: 100%;
+  filter: url('#turbulence');
+}
+
+.rule {
+  text-transform: uppercase;
+  opacity: 100%;
+  font-size: 45px;
+  padding: 20px;
+  text-align: left;
+  padding-left: 90px;
+}
+
+.line {
+  margin: 0 auto;
+  width: 800px;
+  height: 10px;
+  background-color: black;
+}
+
+.line::before {
+  content: '';
+  height: 10px;
+  width: 50px;
+  transform: rotate(90deg);
+  background-color: rgb(0, 0, 0);
+  position: absolute;
+  left: 70px;
+  right: 0;
+}
+
+.line::after {
+  content: '';
+  height: 10px;
+  width: 50px;
+  transform: rotate(90deg);
+  background-color: rgb(0, 0, 0);
+  position: absolute;
+  left: 878px;
+}
+
+h1 {
+  z-index: 50;
+}
+
+.small {
+  font-size: 30px;
+  text-transform: none;
+}
+
+footer {
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+footer a {
+  text-decoration: none;
+  color: rgb(0, 0, 0);
+}
+
+footer a:hover {
+  color: rgba(0, 0, 0, 0.685);
+}
+
+svg {
+  display: none;
+}
