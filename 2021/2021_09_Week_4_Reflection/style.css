@@ -1,0 +1,58 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  background-color: blanchedalmond;
+  justify-content: center;
+  align-items: center;
+}
+
+footer {
+  margin: 2em;
+}
+
+footer a {
+  color: black;
+}
+
+.square {
+  width: 170px;
+  height: 170px;
+  /* border: 1px solid blue; */
+  display: flex;
+  position: relative;
+  font-size: 10em;
+  justify-content: center;
+  align-items: center;
+  transition: opacity linear 0.5s;
+  cursor: pointer;
+  margin: -0.1em;
+}
+
+.scaleY {
+  transform: scale(1, -1);
+}
+
+.scaleX {
+  transform: scaleX(-1);
+}
+
+.letter {
+  display: flex;
+  margin: 0 auto;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 25%;
+}
+
+.reflection {
+  color: rgb(44, 44, 44);
+}
