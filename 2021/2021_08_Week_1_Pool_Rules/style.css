@@ -144,7 +144,7 @@ h1 {
   height: 100%;
   width: 100%;
   background-size: cover;
-  background-image: url("https://raw.githubusercontent.com/panvicka/codepan-challenges/main/2021Aug_PoolRules/water-4.jpg");
+  background-image: url("https://raw.githubusercontent.com/panvicka/codepan-challenges/main/2021/2021_08_Week_1_Pool_Rules/water-4.jpg");
   opacity: 100%;
   filter: url('#turbulence');
 }
