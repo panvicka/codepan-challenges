@@ -1,9 +1,9 @@
-console.log('hello');
-// gsap.from('.list-item-1', { duration: 1, y: '-100%', ease: 'bounce' });
+const menuItems = document.querySelectorAll(
+  '.list-item-2, .list-item-3, .list-item-4, .list-item-5'
+);
+const menuTitle = document.querySelector('.list-item-1');
+const bone = document.querySelector('.fa-bone');
 
-// falling-items
-
-// var T5;
 var T1 = {
   animation: null,
   selector: '.list-item-1',
@@ -25,54 +25,114 @@ var T5 = {
   selector: '.list-item-5',
 };
 
-function shakeAnimate(item, angle) {
+var intervalTimerAnchorRotate = undefined;
+var clickedCounter = 0;
+let menuVisible = 0;
+
+function shakeAnimate(item, angle, xBase, yBase) {
   item.animation = TweenLite.to(`${item.selector}`, 0.15, {
     duration: 1,
-    x: R(-1, 1),
-    y: R(-1, 1),
+    x: xBase + R(-1, 1),
+    y: yBase + R(-1, 1),
     rotation: function () {
-       return R(-0.8,0.8)+angle;
+      return R(-0.8, 0.8) + angle;
     },
     ease: Sine.easeInOut,
     onComplete: function () {
-      return shakeAnimate(item, angle);
+      return shakeAnimate(item, angle, xBase, yBase);
     },
   });
 }
 
-var tl = new TimelineLite({ paused: true });
-tl.to('.falling-items', 1, { y: '-20px', rotation: -50 });
+var swing = () => {
+  swinging.fromTo(
+    '.falling-items',
+    { y: '-20px', rotation: -65 },
+    {
+      y: '-20px',
+      rotation: -35,
+      repeat: -1,
+      yoyo: true,
+      ease: Power2.easeInOut,
+    },
+    { y: '-20px', rotation: -65 }
+  );
+};
 
-shakeAnimate(T1, 0);
-shakeAnimate(T2, 0);
-shakeAnimate(T3, 0);
-shakeAnimate(T4, 0);
-shakeAnimate(T5, 0);
-
-var myVar = undefined;
-
-document.addEventListener('click', (event) => {
-  //   T1.animation.kill();
-  //   T2.animation.kill();
-  T3.animation.kill();
-  //   T4.animation.kill();
-  //   T5.animation.kill();
-  tl.play();
-  myVar = setInterval(myTimer, 10);
-  shakeAnimate(T3, -12);
-  shakeAnimate(T4, -11);
-  shakeAnimate(T5, -10);
+var swinging = gsap.timeline({
+  defaults: {
+    duration: 1,
+  },
 });
 
-let i = 0;
+var fallingOver = new TimelineLite({ paused: true, onComplete: swing });
+fallingOver.to('.falling-items', 1, { y: '-20px', rotation: -65 });
+
+var fallingAway = new TimelineLite({ paused: true, duration: 0 });
+fallingAway.to('.falling-items', 6, { y: '6000px' });
+
+shakeAnimate(T1, 0, 0, 0);
+shakeAnimate(T2, 0, 0, 0);
+shakeAnimate(T3, 0, 0, 0);
+shakeAnimate(T4, 0, 0, 0);
+shakeAnimate(T5, 0, 0, 0);
+
+let handleMenuToggle = () => {
+  menuVisible = !menuVisible;
+  if (menuVisible) {
+    bone.style.transform = 'rotate(90deg)';
+    document.documentElement.style.setProperty('--opacityFirstAnchor', 1);
+    menuItems.forEach((i) => {
+      i.addEventListener('click', handleClick);
+    });
+    menuItems.forEach((i) => {
+      i.style.opacity = 1;
+    });
+  } else {
+    bone.style.transform = 'rotate(0deg)';
+    document.documentElement.style.setProperty('--opacityFirstAnchor', 0);
+
+    menuItems.forEach((i) => {
+      i.removeEventListener('click', handleClick);
+    });
+    menuItems.forEach((i) => {
+      i.style.opacity = 0;
+    });
+  }
+};
+
+function handleClick() {
+  if (clickedCounter == 0) {
+    clickedCounter++;
+    T3.animation.kill();
+    T4.animation.kill();
+    T5.animation.kill();
+    fallingOver.play();
+    intervalTimerAnchorRotate = setInterval(myTimer, 5);
+    shakeAnimate(T3, -12, -5, -10);
+    shakeAnimate(T4, -12, -33, -18);
+    shakeAnimate(T5, -12, -67, -19);
+  } else if (clickedCounter > 0) {
+    swinging.kill();
+    fallingOver.kill();
+    fallingAway.play();
+    T3.animation.kill();
+    T4.animation.kill();
+    menuTitle.removeEventListener('click', handleMenuToggle);
+  }
+}
+
+let anchorAngle = 0;
 function myTimer() {
-  i++;
-  document.documentElement.style.setProperty('--rotation', i + 'deg');
-  if (i >= 50) {
-    clearInterval(myVar);
+  anchorAngle++;
+  document.documentElement.style.setProperty('--rotation', anchorAngle + 'deg');
+  if (anchorAngle >= 60) {
+    clearInterval(intervalTimerAnchorRotate);
   }
 }
 
 function R(max, min) {
   return Math.random() * (max - min) + min;
 }
+
+menuTitle.addEventListener('click', handleMenuToggle);
