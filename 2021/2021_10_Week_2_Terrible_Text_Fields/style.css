@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Eater&family=Source+Sans+Pro&display=swap');
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+h1 {
+  font-size: 5em;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  font-family: 'Eater', cursive;
+  background-color: rgb(235, 138, 94);
+}
+
+.container {
+  margin-top: 5em;
+  display: flex;
+  height: 200px;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+}
+
+input {
+  background-color: rgb(235, 138, 94);
+  font-family: 'Source Sans Pro', sans-serif;
+  transition: transform 1s linear;
+  text-align: center;
+  font-size: 5em;
+  padding: 0;
+  width: 500px;
+  border: 0;
+  border-bottom: 2px solid black;
+  border-radius: 100px 50px 225px 0px/15px 225px 18px 10px;
+
+}
+
+textarea:focus,
+input:focus {
+  outline: none;
+}
+
+input::placeholder {
+  font-size: 0.5em;
+}
+
+.suffix,
+.prefix {
+  width: 0px;
+  height: 100px;
+  transition: all ease-in-out 1s;
+  display: flex;
+  font-size: 2em;
+  align-items: center;
+  white-space: nowrap;
+}
+
+.suffix {
+  justify-content: flex-start;
+}
+
+.prefix {
+  justify-content: flex-end;
+}
+
+.move-up {
+  transform: translateY(-80px);
+  opacity: 0;
+}
+
+.move-down {
+  transform: translateY(80px);
+  opacity: 0;
+}
+
+
+.move-center {
+  transform: translateY(0px);
+  width: 600px;
+  opacity: 1;
+}
+
+.text-wrapper {
+  margin-top: 2em;
+  display: flex;
+  position: relative;
+  max-width: 600px;
+}
+
+a {
+    color: black;
+}
