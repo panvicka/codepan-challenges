@@ -10,7 +10,7 @@ const moveEventIn = styled.keyframes`
   to {
     transform: scale(1.1) translateY(-70px);
     opacity: 1;
-    background-color: rgba(255,255,255, 0.7);
+    background-color: rgba(255, 255, 255, 0.7);
   }
 `;
 
@@ -57,8 +57,7 @@ const DayContainer = styled.div`
   width: 180px;
   position: relative;
   background-size: 300%;
- 
-  
+
   &:before {
     border-radius: 5px;
     content: "";
@@ -88,7 +87,7 @@ const WeekDay = styled.div`
   font-weight: bolder;
   width: 100%;
   transition: opacity 0.3s linear;
-  background-color: rgba(255,255,255, 0.7);
+  background-color: rgba(255, 255, 255, 0.7);
   height: 1.3em;
   padding-top: 0.2em;
 
@@ -99,11 +98,16 @@ const WeekDay = styled.div`
 
 const DayNumber = styled.div`
   color: black;
+  display:block;
   position: absolute;
+  z-index: 10;
   font-size: 9.7em;
   width: 100%;
   text-align: center;
-  bottom: -0.25em;
+  bottom:0;
+  top: 12px;
+  left: 0;
+  right: 0;
   animation-name: ${moveDateIn}
   animation-duration:0.4s;
   animation-fill-mode: forwards;
