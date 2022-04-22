@@ -1,0 +1,67 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --color: #272b2e;
+  --inverse-color: #f8f8ff;
+}
+
+
+body {
+  background-color: rgb(199, 199, 199);
+  color: black;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.icon {
+  background-color: var(--color);
+  border-radius: 10000px;
+  height: 160px;
+  width: 160px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 24px;
+  transition: linear background-color 0.5s;
+  cursor: pointer;
+      box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+
+}
+
+.icon:hover {
+  background-color: var(--inverse-color); 
+}
+
+#template,
+#path {
+  fill: none;
+}
+#template {
+  stroke-width: 5px;
+  stroke: var(--inverse-color);
+}
+#path {
+  stroke:  var(--color);
+  stroke-width: 6px;
+  visibility: hidden;
+}
+#code,
+#value {
+  font-size: 20px;
+  font-family: monospace;
+}
+#code {
+  color: #777;
+  margin: 20px;
+  position: relative;
+  visibility: hidden;
+}
