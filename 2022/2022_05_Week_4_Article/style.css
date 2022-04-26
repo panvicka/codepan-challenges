@@ -1,0 +1,133 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500&family=Poppins:wght@500;900&display=swap");
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+  font-family: "Inter", sans-serif;
+}
+
+i {
+  font-style: normal;
+}
+
+.container {
+  width: 70%;
+  display: flex;
+  flex-direction: row;
+  min-width: 1000px;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  max-width: 1500px;
+  border: 2px solid blue;
+  margin-left: 27em;
+}
+.content h1,
+.content h2 {
+  margin-bottom: 1em;
+  margin-top: 1em;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+}
+.content hr {
+  border: 0;
+  height: 1px;
+  background: #333;
+  background-image: linear-gradient(to right, #ccc, #333, #ccc);
+  margin-bottom: 2em;
+}
+.content p {
+  font-size: 1.3rem;
+  line-height: 1.2em;
+  font-weight: 200;
+}
+
+.side {
+  position: fixed;
+  z-index: -90;
+  left: 10em;
+  /* <- you need a value! */
+  top: 0;
+  /* <- you need a value! */
+  border: 2px solid gold;
+  height: 100vh;
+  display: inline-block;
+}
+.side img {
+  height: 100%;
+}
+.side a {
+  position: absolute;
+  top: 1.56em;
+  left: 1em;
+  font-size: 2rem;
+  z-index: 5;
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+.header {
+  width: 100%;
+  margin-top: 3em;
+}
+.header .meta-info {
+  color: grey;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.info {
+  border: 2px solid pink;
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  margin-bottom: 2em;
+  justify-content: space-between;
+}
+
+.icons i {
+  margin-right: 0.5em;
+  font-style: normal;
+  font-size: 2em;
+}
+
+.tags {
+  display: flex;
+  flex-direction: row;
+}
+.tags a {
+  margin: 0 1em 0 0;
+  border: 2px solid blue;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-size: 1.4rem;
+}
+.tags i {
+  margin-right: 0.2em;
+  font-style: normal;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.1em;
+  height: 30px;
+  width: 30px;
+  border-radius: 10000px;
+  border: 2px solid grey;
+}/*# sourceMappingURL=style.css.map */
