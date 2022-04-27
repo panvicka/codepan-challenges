@@ -11,7 +11,6 @@ body {
   display: flex;
   justify-content: center;
   width: 100%;
-  height: 100vh;
   font-family: "Inter", sans-serif;
 }
 
@@ -19,21 +18,55 @@ i {
   font-style: normal;
 }
 
+.quote {
+  position: relative;
+
+ 
+  padding: 30px 0;
+  width: 100%;
+  max-width: 500px;
+  z-index: 1;
+  margin: 80px auto;
+  align-self: center;
+  border-top: solid 1px;
+  border-bottom: solid 1px;
+}
+
+/* Blockquote header */
+.quote h4 {
+  position: relative; 
+  font-size: 40px;
+  font-weight: 800;
+  line-height: 1;
+  margin: 0;
+}
+
+/* Blockquote right double quotes */
+.quote:after {
+  position: absolute;
+  content: "”";
+  font-size: 5rem;
+  line-height: 0;
+  bottom: -10px;
+  right: 30px;
+}
+
 .container {
-  width: 70%;
   display: flex;
   flex-direction: row;
-  min-width: 1000px;
+  border: 5px solid orange;
+  width: 80%;
+  min-width: 700px;
+  max-width: 1300px;
 }
 
 .content {
   display: flex;
   flex-direction: column;
-  width: 60%;
-  max-width: 1500px;
+  flex: 1;
   border: 2px solid blue;
-  //   min-width: 500px;
-  margin-left: 27em;
+  padding-left: 1em;
+
   h1,
   h2 {
     margin-bottom: 1em;
@@ -57,18 +90,27 @@ i {
   }
 }
 
-.side {
-  position: fixed;
-  z-index: -90;
-  left: 10em; /* <- you need a value! */
-  top: 0; /* <- you need a value! */
-  border: 2px solid gold;
-  //   width: 50%;
-  height: 100vh;
-  display: inline-block;
+.images {
   img {
+    position: fixed;
+    z-index: -90;
     height: 100%;
+    object-fit: cover;
+    left: 10em; /* <- you need a value! */
+    top: 0; /* <- you need a value! */
+    max-width: 530px;
+    transition: opacity linear 1s;
+    opacity: 0;
   }
+  #img-1 {
+    opacity: 1;
+  }
+}
+
+.side {
+  // min-width: 600px;
+  border: 2px solid gold;
+  height: 100%;
 
   a {
     position: absolute;
