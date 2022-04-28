@@ -1,4 +1,3 @@
-@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500&family=Poppins:wght@500;900&display=swap");
 *,
 *::after,
@@ -20,42 +19,23 @@ i {
 }
 
 .quote {
-  position: relative;
-  padding: 30px 0;
-  width: 100%;
-  max-width: 500px;
-  z-index: 1;
-  margin: 80px auto;
-  align-self: center;
-  border-top: solid 1px;
-  border-bottom: solid 1px;
+  padding: 1em 0;
+  max-width: 80%;
+  margin: 2em auto;
 }
 
-/* Blockquote header */
 .quote h4 {
-  position: relative;
-  font-size: 40px;
-  font-weight: 800;
-  line-height: 1;
+  font-size: 2rem;
+  font-weight: 400;
+  line-height: 1.3;
   margin: 0;
-}
-
-/* Blockquote right double quotes */
-.quote:after {
-  position: absolute;
-  content: "”";
-  font-size: 5rem;
-  line-height: 0;
-  bottom: -10px;
-  right: 30px;
 }
 
 .container {
   display: flex;
   flex-direction: row;
-  border: 5px solid orange;
-  width: 80%;
-  min-width: 700px;
+  width: 70%;
+  min-width: 800px;
   max-width: 1300px;
 }
 
@@ -63,8 +43,14 @@ i {
   display: flex;
   flex-direction: column;
   flex: 1;
-  border: 2px solid blue;
   padding-left: 1em;
+}
+.content .first-letter {
+  padding: 0 0.3rem;
+  margin: 0 0.3rem 0 0;
+  font-size: 4rem;
+  line-height: 1;
+  font-weight: 800;
 }
 .content h1,
 .content h2 {
@@ -77,8 +63,8 @@ i {
   border: 0;
   height: 1px;
   background: #333;
-  background-image: linear-gradient(to right, #ccc, #333, #ccc);
-  margin-bottom: 2em;
+  background-image: linear-gradient(to right, #ccc, rgb(148, 148, 148), #ccc);
+  margin-bottom: 1.5em;
 }
 .content p {
   font-size: 1.3rem;
@@ -93,9 +79,7 @@ i {
   -o-object-fit: cover;
      object-fit: cover;
   left: 10em;
-  /* <- you need a value! */
   top: 0;
-  /* <- you need a value! */
   max-width: 530px;
   transition: opacity linear 1s;
   opacity: 0;
@@ -105,16 +89,7 @@ i {
 }
 
 .side {
-  border: 2px solid gold;
   height: 100%;
-}
-.side a {
-  position: absolute;
-  top: 1.56em;
-  left: 1em;
-  font-size: 2rem;
-  z-index: 5;
-  cursor: pointer;
 }
 
 a {
@@ -133,18 +108,24 @@ a {
 }
 
 .info {
-  border: 2px solid pink;
   display: flex;
   width: 100%;
   flex-direction: row;
-  margin-bottom: 2em;
+  margin-bottom: 1.2em;
   justify-content: space-between;
 }
 
 .icons i {
   margin-right: 0.5em;
   font-style: normal;
-  font-size: 2em;
+  font-size: 1.5em;
+  transition: color 0.2s linear;
+}
+.icons .like-active {
+  color: rgb(238, 168, 168);
+}
+.icons .bookmark-active {
+  color: rgb(138, 192, 138);
 }
 
 .tags {
@@ -153,7 +134,6 @@ a {
 }
 .tags a {
   margin: 0 1em 0 0;
-  border: 2px solid blue;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -169,5 +149,4 @@ a {
   height: 30px;
   width: 30px;
   border-radius: 10000px;
-  border: 2px solid grey;
 }/*# sourceMappingURL=style.css.map */

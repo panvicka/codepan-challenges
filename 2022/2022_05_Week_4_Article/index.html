@@ -12,6 +12,10 @@
     <title>Birds Article</title>
   </head>
   <body>
+    <div style="display: none" id="hideAll">&nbsp;</div>
+    <script type="text/javascript">
+      document.getElementById("hideAll").style.display = "block";
+    </script>
     <div class="images">
       <img
         id="img-1"
@@ -35,9 +39,7 @@
       />
     </div>
     <div class="container">
-      <div class="side">
-        <a href="#"><i class="fa-solid fa-bars"></i></a>
-      </div>
+      <div class="side"></div>
 
       <div class="content">
         <div class="header">
@@ -47,8 +49,8 @@
               <a href="#"><i class="fa-solid fa-paw"></i>animals</a>
             </div>
             <div class="icons">
-              <a href="#"><i class="fa-solid fa-heart"></i></a>
-              <a href="#"><i class="fa-solid fa-bookmark"></i></a>
+              <a href="#"><i class="fa-solid fa-heart" id="like"></i></a>
+              <a href="#"><i class="fa-solid fa-bookmark" id="bookmark"></i></a>
               <a href="#"><i class="fa-solid fa-share-alt"></i></a>
             </div>
           </div>
@@ -59,25 +61,25 @@
         </div>
 
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus imperdiet ut quam sit amet vehicula. Donec
-          sit amet facilisis quam. Integer mollis, urna accumsan tempor hendrerit, risus neque tincidunt neque, in
-          aliquam elit eros quis tortor. Sed id venenatis massa, ut malesuada sem. Nam lacinia sodales tellus nec
-          efficitur. Vestibulum fringilla nisl ac iaculis ultricies. Sed commodo imperdiet metus vitae molestie. In
-          laoreet rutrum pretium. Aenean a enim ac lacus tincidunt pellentesque ac a tellus. a green hummingbird flying
-          among yellow flowers Donec imperdiet efficitur risus in venenatis. Aenean ornare iaculis orci a condimentum.
-          Praesent tincidunt, purus ac placerat posuere, lacus risus suscipit lacus, et sollicitudin turpis metus in
-          enim. Vestibulum at imperdiet magna, ac vehicula magna. Praesent placerat sapien bibendum, faucibus lectus at,
-          euismod elit. Nunc velit est, faucibus et faucibus eu, tempus non nisi. Fusce hendrerit auctor lectus non
-          auctor. Vestibulum luctus metus eget sapien volutpat congue. Fusce eget augue mauris. Ut egestas mi et feugiat
-          sagittis. Cras ac convallis elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus imperdiet
+          <span class="first-letter">L</span>orem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus imperdiet
           ut quam sit amet vehicula. Donec sit amet facilisis quam. Integer mollis, urna accumsan tempor hendrerit,
           risus neque tincidunt neque, in aliquam elit eros quis tortor. Sed id venenatis massa, ut malesuada sem. Nam
           lacinia sodales tellus nec efficitur. Vestibulum fringilla nisl ac iaculis ultricies. Sed commodo imperdiet
-          metus vitae molestie. In laoreet rutrum pretium. Aenean a enim ac lacus tincidunt pellentesque ac a tellus.
-          Nam tincidunt vel risus et dictum. Quisque efficitur quam vel libero pellentesque interdum. Lorem ipsum dolor
-          sit amet, consectetur adipiscing elit. Sed iaculis ligula ut aliquam aliquet. Vivamus vel elementum lectus.
-          Interdum et malesuada fames ac ante ipsum primis in faucibus. Quisque vel erat leo. Donec rhoncus nec orci
-          eget rutrum.
+          metus vitae molestie. In laoreet rutrum pretium. Aenean a enim ac lacus tincidunt pellentesque ac a tellus. a
+          green hummingbird flying among yellow flowers Donec imperdiet efficitur risus in venenatis. Aenean ornare
+          iaculis orci a condimentum. Praesent tincidunt, purus ac placerat posuere, lacus risus suscipit lacus, et
+          sollicitudin turpis metus in enim. Vestibulum at imperdiet magna, ac vehicula magna. Praesent placerat sapien
+          bibendum, faucibus lectus at, euismod elit. Nunc velit est, faucibus et faucibus eu, tempus non nisi. Fusce
+          hendrerit auctor lectus non auctor. Vestibulum luctus metus eget sapien volutpat congue. Fusce eget augue
+          mauris. Ut egestas mi et feugiat sagittis. Cras ac convallis elit. Lorem ipsum dolor sit amet, consectetur
+          adipiscing elit. Vivamus imperdiet ut quam sit amet vehicula. Donec sit amet facilisis quam. Integer mollis,
+          urna accumsan tempor hendrerit, risus neque tincidunt neque, in aliquam elit eros quis tortor. Sed id
+          venenatis massa, ut malesuada sem. Nam lacinia sodales tellus nec efficitur. Vestibulum fringilla nisl ac
+          iaculis ultricies. Sed commodo imperdiet metus vitae molestie. In laoreet rutrum pretium. Aenean a enim ac
+          lacus tincidunt pellentesque ac a tellus. Nam tincidunt vel risus et dictum. Quisque efficitur quam vel libero
+          pellentesque interdum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed iaculis ligula ut aliquam
+          aliquet. Vivamus vel elementum lectus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Quisque
+          vel erat leo. Donec rhoncus nec orci eget rutrum.
         </p>
         <h2>Flapping Around, Flying All Over</h2>
         <p>
@@ -97,21 +99,13 @@
           ligula ut, molestie ultricies massa. Curabitur nec suscipit metus.
         </p>
 
-
-      
-          <div class="quote">
-            <h3>
-              Be like the bird who, pausing in her flight awhile on boughs too slight, feels them give way beneath her, and
-              yet sings, knowing she hath wings.
-             </h3>
-            <h4>&mdash;Victor Hugo</h4>
-          </div>
-       
-
-        <!-- <span class="cite">
-          "Be like the bird who, pausing in her flight awhile on boughs too slight, feels them give way beneath her, and
-          yet sings, knowing she hath wings." — Victor Hugo
-        </span> -->
+        <div class="quote">
+          <h3>
+            Be like the bird who, pausing in her flight awhile on boughs too slight, feels them give way beneath her,
+            and yet sings, knowing she hath wings.
+          </h3>
+          <h4>&mdash;Victor Hugo</h4>
+        </div>
 
         <p>
           Donec eu eros augue. Fusce blandit sed lacus ut pretium. Vivamus lacus ligula, fringilla sit amet nibh non,
@@ -165,9 +159,10 @@
           laoreet rutrum pretium. Aenean a enim ac lacus tincidunt pellentesque ac a tellus.
         </p>
 
-        <span class="cite">
-          "I'd rather learn from one bird how to sing than teach ten thousand stars how not to dance" — e.e. cummings
-        </span>
+        <div class="quote">
+          <h3>I'd rather learn from one bird how to sing than teach ten thousand stars how not to dance"</h3>
+          <h4>&mdash;e.e. cummings</h4>
+        </div>
 
         <p>
           In hac habitasse platea dictumst. Aenean sit amet libero lorem. Quisque in sagittis nisl, placerat auctor
