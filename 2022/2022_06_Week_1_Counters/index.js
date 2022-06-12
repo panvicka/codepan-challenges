@@ -14,9 +14,6 @@ function Counter({ startValue }) {
         return { ...prev, new: prev.old + 1 };
       });
     }, 200);
-
-    console.log("increase handler");
-    console.log(numberArrayObject);
   };
 
   let decrease = () => {
@@ -28,15 +25,9 @@ function Counter({ startValue }) {
         return { ...prev, new: prev.old - 1 };
       });
     }, 200);
-
-    console.log("decrease handler");
-    console.log(numberArrayObject);
   };
 
   let cleanAfterAnimation = () => {
-    setAnimateIncrease(false);
-    setAnimateDecrease(false);
-
     if (lastWasIncrease) {
       setNumberArrayObject((prev) => {
         return { ...prev, old: prev.old + 1 };
@@ -47,65 +38,84 @@ function Counter({ startValue }) {
       });
     }
 
-    console.log("animation cleaned");
-    console.log(numberArrayObject);
+    setAnimateIncrease(false);
+    setAnimateDecrease(false);
   };
 
   return (
-    <div className="wrapper">
-      <button onClick={increase}>up</button>
-      <div className="numbers-wrapper">
-        {/* old number */}
-        <div className="number upper">
-          {numberArrayObject[`${lastWasIncrease ? "old" : "new"}`]
-            .toString()
-            .split("")
-            .map((number, index) => {
-              return (
-                <span
-                  key={index}
-                  style={{ animationDelay: `${index / 10}s` }}
-                  className={`${animateIncrease ? "animate-upper-go-up" : ""} ${
-                    animateDecrease ? "animate-upper-go-down" : ""
-                  } ${lastWasIncrease ? "hidden" : ""}`}
-                  onAnimationEnd={() => {
-                    if (numberArrayObject[`${lastWasIncrease ? "old" : "new"}`].toString().length - 1 == index) {
-                      cleanAfterAnimation();
-                    }
-                  }}
-                >
-                  {number}
-                </span>
-              );
-            })}
-        </div>
-
-        <div className="number lower">
-          {numberArrayObject[`${lastWasIncrease ? "new" : "old"}`]
-            .toString()
-            .split("")
-            .map((number, index) => {
-              return (
-                <span
-                  key={`lower-${index}`}
-                  style={{ animationDelay: `${index / 10}s` }}
-                  className={`${animateIncrease ? "animate-lower-go-up" : ""} ${
-                    animateDecrease ? "animate-lower-go-down" : ""
-                  } ${lastWasIncrease ? "" : "hidden"}`}
-                >
-                  {number}
-                </span>
-              );
-            })}
-        </div>
+    <div className="counter-wrapper">
+      <button
+        onClick={() => {
+          if (!animateDecrease && !animateIncrease) {
+            increase();
+          }
+        }}
+      >
+        <i className="fa-solid fa-angle-up"></i>
+      </button>
+      <div className="number upper">
+        {numberArrayObject[`${lastWasIncrease ? "old" : "new"}`]
+          .toString()
+          .split("")
+          .map((number, index) => {
+            return (
+              <span
+                key={index}
+                style={{ animationDelay: `${index / 10}s` }}
+                className={`${animateIncrease ? "animate-upper-go-up" : ""} ${
+                  animateDecrease ? "animate-upper-go-down" : ""
+                } ${lastWasIncrease ? "hidden" : ""}`}
+                onAnimationEnd={() => {
+                  if (numberArrayObject[`${lastWasIncrease ? "old" : "new"}`].toString().length - 1 == index) {
+                    cleanAfterAnimation();
+                  }
+                }}
+              >
+                {number}
+              </span>
+            );
+          })}
       </div>
-      <button onClick={decrease}>down</button>
+
+      <div className="number lower">
+        {numberArrayObject[`${lastWasIncrease ? "new" : "old"}`]
+          .toString()
+          .split("")
+          .map((number, index) => {
+            return (
+              <span
+                key={`lower-${index}`}
+                style={{ animationDelay: `${index / 10}s` }}
+                className={`${animateIncrease ? "animate-lower-go-up" : ""} ${
+                  animateDecrease ? "animate-lower-go-down" : ""
+                } ${lastWasIncrease ? "" : "hidden"}`}
+              >
+                {number}
+              </span>
+            );
+          })}
+      </div>
+      <button
+        onClick={() => {
+          if (!animateDecrease && !animateIncrease) {
+            decrease();
+          }
+        }}
+      >
+        <i className="fa-solid fa-angle-down"></i>
+      </button>
     </div>
   );
 }
 
 function App() {
-  return <Counter startValue={15} />;
+  return (
+    <div className="wrapper">
+      <Counter startValue={16} />
+      <Counter startValue={256} />
+      <Counter startValue={4096} />
+    </div>
+  );
 }
 
 ReactDOM.render(<App />, document.querySelector("#root"));

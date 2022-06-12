@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Mukta:wght@300;400;500&family=Open+Sans&display=swap");
+
 *,
 *::after,
 *::before {
@@ -6,80 +8,85 @@
   box-sizing: border-box;
 }
 
-.wrapper {
-  margin-top: 5em;
+body {
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
+  min-height: 100vh;
+  background-color: #f8f8ff;
+}
+
+button {
+  padding: 0.3em;
+  background-color: transparent;
+  border: none;
+  font-size: 1em;
+  cursor: pointer;
+}
+
+i {
+  font-style: normal;
+  color: black;
+}
+
+.wrapper {
+  display: flex;
+}
+
+.counter-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
   font-size: 2em;
+  height: 150px;
+  width: 200px;
+  margin: 2em;
 }
 
 .numbers-wrapper {
   position: relative;
-  height: 2em;
   display: flex;
 }
 
-.number.upper {
+.number {
+  margin-top: 50px;
   position: absolute;
   display: flex;
-  color: rgb(19, 19, 255);
-  /* top: -50px; */
-  /* visibility: hidden; */
-
-}
-
-.number.lower {
-  position: absolute;
-  display: flex;
-  /* top: 50px; */
-  color: rgb(0, 255, 128);
-
-  /* visibility: hidden; */
+  width: 80px;
+  z-index: -5;
 }
 
 .number > span {
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
   display: inline-block;
+  font-family: "Open Sans", sans-serif;
 }
 
 .hidden {
   opacity: 0;
 }
 
-[attribute$="animate"] {
-   
+[class*="animate"] {
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+  visibility: visible;
 }
 
-/* lower */
 .animate-lower-go-up {
   animation-name: lower-go-up;
-  animation-duration: 1s;
-  animation-fill-mode: forwards;
-
-  visibility: visible;
 }
-
-/* lower */
 .animate-lower-go-down {
   animation-name: lower-go-down;
-  animation-duration: 1s;
-  animation-fill-mode: forwards;
-  visibility: visible;
 }
-
 .animate-upper-go-up {
   animation-name: upper-go-up;
-  animation-duration: 1s;
-  animation-fill-mode: forwards;
-  visibility: visible;
 }
-
 .animate-upper-go-down {
   animation-name: upper-go-down;
-  animation-duration: 1s;
-  animation-fill-mode: forwards;
-  visibility: visible;
 }
 
 @keyframes upper-go-down {
@@ -87,7 +94,7 @@
     transform: translateY(-55px);
     opacity: 1;
   }
-  50% {
+  30% {
     transform: translateY(5px);
     opacity: 1;
   }
@@ -158,7 +165,7 @@
     opacity: 0;
   }
 
-  80% {
+  30% {
     transform: translateY(-10px);
     opacity: 1;
   }
